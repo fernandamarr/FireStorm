@@ -50,7 +50,6 @@ export default class AppComponent extends Component {
     let music;
     let player;
     // eslint-disable-next-line
-    let playerIsDead = false;
     let enemy;
     let fireball;
     let fireball2;
@@ -61,6 +60,8 @@ export default class AppComponent extends Component {
     let CoinLayer;
     let coins;
     let coinScore = 0;
+    let lives = 3;
+    let livesText;
 
     function preload() {
       // Load assets
@@ -147,8 +148,7 @@ export default class AppComponent extends Component {
 
       // player.displayWidth = 16; player.displayHeight = 36;
 
-      player.displayWidth = 16; player.displayHeight = 36;
-
+      player.displayWidth = 30; player.displayHeight = 55;
 
       player.setBounce(0.2);
       player.setCollideWorldBounds(true);
@@ -238,13 +238,20 @@ export default class AppComponent extends Component {
       });
       scoreText.setScrollFactor(0);
 
+      //lives
+      livesText = this.add.text(190, 150, `Lives: ${lives}`, {
+        fontSize: '30px',
+        fill: '#0095DD'
+      });
+      livesText.setScrollFactor(0);
+
       // Camera follows player
       this.cameras.main.startFollow(player, true, 0.5, 1.0);
       this.cameras.main.followOffset.set(0, 30);
       // this.cameras.main.startFollow(player, true, 2.0, 2.0);
 
       // this.cameras.main.setZoom(4);
-      this.cameras.main.setZoom(1.2);
+      this.cameras.main.setZoom(1.4);
   }
 
     function update() {
@@ -276,21 +283,24 @@ export default class AppComponent extends Component {
       scoreText.setText(`Score: ${coinScore}`); // set the text to show the current score
       this.sound.play("coin-sound");
       return false;
-
     }
 
     // Fireball
     function hitFireball (player) {
-      this.physics.pause();
-      player.setTint(0xff0000);
-      // shake camera
-      playerIsDead = true;
-      this.cameras.main.shake(300);
-      music.stop();
-      this.sound.play("dead-sound");
-      this.scene.restart();
-      coinScore = 0;
-      console.log("YOU DED. GAME OVER")
+      player.setTint(0x7EF9FF);
+      lives --;
+      livesText.setText(`Lives: ${lives}`); // set the text to show the current score
+      if (lives === 0) {
+        this.physics.pause();
+        player.setTint(0xff0000);
+        this.cameras.main.shake(300); 
+        music.stop();
+        this.sound.play("dead-sound");
+        coinScore = 0;
+        this.scene.restart();
+        lives = 3;
+        console.log("YOU DED. GAME OVER")
+      }
     }
   }
 
