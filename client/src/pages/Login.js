@@ -60,19 +60,20 @@ class Login extends Component {
                                 name="password"
                                 placeholder="Password (MOST DEF REQUIRED SON!)"
                             />
-                            <Link to="/signup">
                                 <SignUpBtn>
+                            <Link to="/signup">
                                     Sign Up!
+                            </Link>
                                 </SignUpBtn>
-                            </Link>
-                            <Link to="/game">
-                                <FormBtn
-                                    disable={!(this.state.email && this.state.password)}
-                                    onClick={this.handleFormSubmit}
-                                >
+
+                            <FormBtn
+                                disable={!(this.state.email && this.state.password)}
+                                onClick={this.handleFormSubmit}
+                            >
+                                <Link to="/game">
                                     Ready to Play!
-                            </FormBtn>
                             </Link>
+                            </FormBtn>
                         </form>
                     </Col>
                 </Row>

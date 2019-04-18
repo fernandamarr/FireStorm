@@ -69,11 +69,11 @@ class SignUp extends Component {
                                 name="password"
                                 placeholder="Password (MOST DEF REQUIRED SON!)"
                             />
-                            <Link to="/login">
                                 <SignUpBtn>
+                            <Link to="/">
                                     Sign Up!
-                                </SignUpBtn>
                             </Link>
+                                </SignUpBtn>
 
                             {/* HEY IDK IF WE SHOULD ADD THIS BUT ITS UP TO YOU! I GUES WE CAN 
                             DO EITHER OR LIKE REDIRECT TO LOGIN IN OR NOT */}
