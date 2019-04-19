@@ -3,7 +3,7 @@ import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
 import { Link } from "react-router-dom";
-import { Input, FormBtn } from "../components/Form";
+import { Input } from "../components/Input";
 import SignUpBtn from "../components/SignUp";
 
 class SignUp extends Component {
@@ -69,11 +69,11 @@ class SignUp extends Component {
                                 name="password"
                                 placeholder="Password (MOST DEF REQUIRED SON!)"
                             />
-                            <Link to="/login">
                                 <SignUpBtn>
+                            <Link to="/">
                                     Sign Up!
-                                </SignUpBtn>
                             </Link>
+                                </SignUpBtn>
 
                             {/* HEY IDK IF WE SHOULD ADD THIS BUT ITS UP TO YOU! I GUES WE CAN 
                             DO EITHER OR LIKE REDIRECT TO LOGIN IN OR NOT */}

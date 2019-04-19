@@ -3,7 +3,7 @@ import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
 import { Link } from "react-router-dom";
-import { Input, FormBtn } from "../components/Form";
+import { Input, FormBtn } from "../components/Input";
 import SignUpBtn from "../components/SignUp";
 
 class Login extends Component {
@@ -60,19 +60,20 @@ class Login extends Component {
                                 name="password"
                                 placeholder="Password (MOST DEF REQUIRED SON!)"
                             />
-                            <Link to="/signup">
                                 <SignUpBtn>
+                            <Link to="/signup">
                                     Sign Up!
+                            </Link>
                                 </SignUpBtn>
-                            </Link>
-                            <Link to="/game">
-                                <FormBtn
-                                    disable={!(this.state.email && this.state.password)}
-                                    onClick={this.handleFormSubmit}
-                                >
+
+                            <FormBtn
+                                disable={!(this.state.email && this.state.password)}
+                                onClick={this.handleFormSubmit}
+                            >
+                                <Link to="/game">
                                     Ready to Play!
-                            </FormBtn>
                             </Link>
+                            </FormBtn>
                         </form>
                     </Col>
                 </Row>
