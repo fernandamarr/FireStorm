@@ -1,5 +1,10 @@
 import Phaser from 'phaser';
 
+// timer 
+// styling the start page
+// styling the game over page
+
+
 export default class GameScene extends Phaser.Scene {
   constructor() {
     super({key: "GameScene"},
@@ -24,8 +29,15 @@ export default class GameScene extends Phaser.Scene {
     coinScore = 0;
     lives = 3;
     livesText;
+    timer;
+
 
     create() {  
+      // this.timer = this.scene.time.addEvent({
+      //   delay: 500,
+      //   callback: callback,
+
+      // })
       this.coinScore = 0 
 
       // Add theme song and loop. Sound will continue to play even when user is not on game screen
@@ -208,10 +220,15 @@ export default class GameScene extends Phaser.Scene {
 
     // Fireball and scene restar on 0 lives
     hitFireball (player) {
-      player.setTint(0x7EF9FF);
       this.lives --;
       this.livesText.setText(`Lives: ${this.lives}`); // set the text to show the current lives
-      if (this.lives === 0) {
+
+      if (this.lives === 2) {
+        player.setTint(0xffb2b2);
+      }  else if (this.lives === 1) {
+        player.setTint(0xff4c4c)
+      }
+      else if (this.lives === 0) {
         this.physics.pause();
         player.setTint(0xff0000);
         this.cameras.main.shake(300); 
