@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { Input, FormBtn } from "../components/Input";
 import SignUpBtn from "../components/SignUp";
 
+
 class Login extends Component {
     state = {
 
@@ -42,8 +43,8 @@ class Login extends Component {
     render() {
         return (
             <Container fluid>
-                <Row>
-                    <Col size="md-6">
+                <Row >
+                    <Col size="md-6 sm-6">
                         <Jumbotron>
                             <h1>Welcome! Please login to play!  </h1>
                         </Jumbotron>
@@ -60,23 +61,21 @@ class Login extends Component {
                                 name="password"
                                 placeholder="Password (MOST DEF REQUIRED SON!)"
                             />
-                                <SignUpBtn>
                             <Link to="/signup">
-                                    Sign Up!
+                                <SignUpBtn>Sign UP Sucka!</SignUpBtn>
                             </Link>
-                                </SignUpBtn>
 
-                            <FormBtn
-                                disable={!(this.state.email && this.state.password)}
-                                onClick={this.handleFormSubmit}
-                            >
-                                <Link to="/game">
-                                    Ready to Play!
+                            <Link to="/game">
+                                <FormBtn>Ready to Play!</FormBtn>
                             </Link>
-                            </FormBtn>
                         </form>
                     </Col>
                 </Row>
+                <Row>
+                    <Col className="gif" size="md-6">
+                    </Col>
+                </Row>
+                
             </Container>
         )
     }
