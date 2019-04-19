@@ -1,9 +1,4 @@
-#phaser-game{
-  border-style: solid;
-  border-color: green;
-  border-width: medium;
-  height: 100%;
-  width: 100%;
-
+body {
+  background-color: black;
 }
 
