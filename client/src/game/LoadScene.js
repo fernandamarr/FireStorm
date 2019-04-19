@@ -23,11 +23,11 @@ export default class LoadScene extends Phaser.Scene {
         this.load.image("middle", "assets/images/background.png");
         this.load.image("enemy", "assets/images/enemy.png");
         this.load.image("treasure", "assets/images/treasure.png");
-        this.load.image("fireball", "assets/images/fireball.png");
-        this.load.image("fireball2", "assets/images/fireball2.png");
-        this.load.image("fireball3", "assets/images/fireball3.png");
-        this.load.image("fireball4", "assets/images/fireball4.png");
-        this.load.image("fireball5", "assets/images/fireball5.png");
+        this.load.image('fb1', '/assets/images/fb500-1.png');
+        this.load.image('fb2', '/assets/images/fb500-2.png');
+        this.load.image('fb3', '/assets/images/fb500-3.png');
+        this.load.image('fb4', '/assets/images/fb500-4.png');
+        this.load.image('fb5', '/assets/images/fb500-5.png')
         this.load.spritesheet("sprite", "assets/images/spritesheet2.png", { frameWidth: 32, frameHeight: 60 } );
         this.load.tilemapTiledJSON("map", "assets/trackrmap2.json");
         this.load.audio("theme-song", "assets/audio/theme-song2.mp3");
