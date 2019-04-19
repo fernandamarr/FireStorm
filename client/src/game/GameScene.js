@@ -23,6 +23,11 @@ export default class GameScene extends Phaser.Scene {
     fireball3;
     fireball4;
     fireball5;
+    fireball6;
+    fireball7;
+    fireball8;
+    fireball9;
+    fireball10;
     scoreText;
     CoinLayer;
     coins;
@@ -89,8 +94,6 @@ export default class GameScene extends Phaser.Scene {
       groundLayer.setCollisionByProperty({ collide: true });
       this.physics.add.collider(this.player, groundLayer);
 
-
-
       // Fireball 1
       this.anims.create({
         key: 'fb',
@@ -139,6 +142,42 @@ export default class GameScene extends Phaser.Scene {
       this.fireball5.setCollideWorldBounds(true);
       this.fireball5.setVelocity(Phaser.Math.Between(-200, 200), 20);
       this.fireball5.displayWidth = 32; this.fireball5.displayHeight = 32;
+      // Fireball 6
+      this.fireball6 = this.physics.add.sprite(1500,350, 'fb1').play('fb');
+      this.physics.add.collider(this.fireball6, groundLayer);
+      this.fireball6.setBounce(1);
+      this.fireball6.setCollideWorldBounds(true);
+      this.fireball6.setVelocity(Phaser.Math.Between(-200, 200), 20);
+      this.fireball6.displayWidth = 32; this.fireball6.displayHeight = 32;
+      // Fireball 7
+      this.fireball7 = this.physics.add.sprite(1500,350, 'fb1').play('fb');
+      this.physics.add.collider(this.fireball7, groundLayer);
+      this.fireball7.setBounce(1);
+      this.fireball7.setCollideWorldBounds(true);
+      this.fireball7.setVelocity(Phaser.Math.Between(-200, 200), 20);
+      this.fireball7.displayWidth = 32; this.fireball7.displayHeight = 32;
+      // Fireball 8
+      this.fireball8 = this.physics.add.sprite(1500,350, 'fb1').play('fb');
+      this.physics.add.collider(this.fireball8, groundLayer);
+      this.fireball8.setBounce(1);
+      this.fireball8.setCollideWorldBounds(true);
+      this.fireball8.setVelocity(Phaser.Math.Between(-200, 200), 20);
+      this.fireball8.displayWidth = 32; this.fireball8.displayHeight = 32;
+      // Fireball 9
+      this.fireball9 = this.physics.add.sprite(1500,350, 'fb1').play('fb');
+      this.physics.add.collider(this.fireball9, groundLayer);
+      this.fireball9.setBounce(1);
+      this.fireball9.setCollideWorldBounds(true);
+      this.fireball9.setVelocity(Phaser.Math.Between(-200, 200), 20);
+      this.fireball9.displayWidth = 32; this.fireball9.displayHeight = 32;
+      // Fireball 10
+      this.fireball10 = this.physics.add.sprite(1500,350, 'fb1').play('fb');
+      this.physics.add.collider(this.fireball10, groundLayer);
+      this.fireball10.setBounce(1);
+      this.fireball10.setCollideWorldBounds(true);
+      this.fireball10.setVelocity(Phaser.Math.Between(-200, 200), 20);
+      this.fireball10.displayWidth = 32; this.fireball10.displayHeight = 32;
+
       // Collisons
       this.physics.add.overlap(this.player, this.coins, this.collectCoin, null, this);
       this.physics.add.collider(this.player, this.fireball, this.hitFireball, null, this);
@@ -146,6 +185,11 @@ export default class GameScene extends Phaser.Scene {
       this.physics.add.collider(this.player, this.fireball3, this.hitFireball, null, this);
       this.physics.add.collider(this.player, this.fireball4, this.hitFireball, null, this);
       this.physics.add.collider(this.player, this.fireball5, this.hitFireball, null, this);
+      this.physics.add.collider(this.player, this.fireball6, this.hitFireball, null, this);
+      this.physics.add.collider(this.player, this.fireball7, this.hitFireball, null, this);
+      this.physics.add.collider(this.player, this.fireball8, this.hitFireball, null, this);
+      this.physics.add.collider(this.player, this.fireball9, this.hitFireball, null, this);
+      this.physics.add.collider(this.player, this.fireball10, this.hitFireball, null, this);
 
       // Set logic and images for sprite movement
       this.anims.create({
@@ -230,10 +274,10 @@ export default class GameScene extends Phaser.Scene {
     }
 
     // Fireball and scene restar on 0 lives
-    hitFireball (player) {
+    hitFireball (player, fbs) {
+      fbs.destroy();
       this.lives --;
       this.livesText.setText(`Lives: ${this.lives}`); // set the text to show the current lives
-
       if (this.lives === 2) {
         player.setTint(0xffb2b2);
       }  else if (this.lives === 1) {
