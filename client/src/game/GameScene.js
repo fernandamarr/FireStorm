@@ -24,6 +24,7 @@ export default class GameScene extends Phaser.Scene {
     coinScore = 0;
     lives = 3;
     livesText;
+    fb;
 
     create() {  
       this.coinScore = 0 
@@ -69,53 +70,63 @@ export default class GameScene extends Phaser.Scene {
       this.player = this.physics.add.sprite(100, 350, 'sprite');
 
       // player.displayWidth = 16; player.displayHeight = 36;
-      this.player.displayWidth = 30; this.player.displayHeight = 55;
-
+      this.player.displayWidth = 26; this.player.displayHeight = 45;
+      this.player.setGravity(0,200);
       this.player.setBounce(0.2);
       this.player.setCollideWorldBounds(true);
       groundLayer.setCollisionByProperty({ collide: true });
       this.physics.add.collider(this.player, groundLayer);
 
-      // Adds enemy
-      this.enemy = this.physics.add.sprite(500,350, 'enemy');
-      this.enemy.setCollideWorldBounds(true);
-      this.physics.add.collider(this.enemy, groundLayer);
+
 
       // Fireball 1
-      this.fireball = this.physics.add.sprite(500,350, 'fireball');
+      this.anims.create({
+        key: 'fb',
+        frames: [
+            { key: 'fb1' },
+            { key: 'fb2' },
+            { key: 'fb3' },
+            { key: 'fb4' },
+            { key: 'fb5', duration: 25 }
+          ],
+          frameRate: 10,
+          repeat: -1 });
+       
+   
+      this.fireball = this.physics.add.sprite(500,350, 'fb1').play('fb');
       this.physics.add.collider(this.fireball, groundLayer);
       this.fireball.setBounce(1);
       this.fireball.setCollideWorldBounds(true);
       this.fireball.setVelocity(Phaser.Math.Between(-200, 200), 20);
-
+      this.fireball.displayWidth = 32; this.fireball.displayHeight = 32;
       // Fireball 2
-      this.fireball2 = this.physics.add.sprite(800,350, 'fireball2');
+      this.fireball2 = this.physics.add.sprite(800,350, 'fb1').play('fb');
       this.physics.add.collider(this.fireball2, groundLayer);
       this.fireball2.setBounce(1);
       this.fireball2.setCollideWorldBounds(true);
       this.fireball2.setVelocity(Phaser.Math.Between(-200, 200), 20);
-
+      this.fireball2.displayWidth = 32; this.fireball2.displayHeight = 32;
       // Fireball 3
-      this.fireball3 = this.physics.add.sprite(900,350, 'fireball3');
+      this.fireball3 = this.physics.add.sprite(900,350, 'fb1').play('fb');
       this.physics.add.collider(this.fireball3, groundLayer);
       this.fireball3.setBounce(1);
       this.fireball3.setCollideWorldBounds(true);
       this.fireball3.setVelocity(Phaser.Math.Between(-200, 200), 20);
-
+      this.fireball3.displayWidth = 32; this.fireball3.displayHeight = 32;
       // Fireball 4
-      this.fireball4 = this.physics.add.sprite(1000,350, 'fireball4');
+      this.fireball4 = this.physics.add.sprite(1000,350, 'fb1').play('fb');
       this.physics.add.collider(this.fireball4, groundLayer);
       this.fireball4.setBounce(1);
       this.fireball4.setCollideWorldBounds(true);
       this.fireball4.setVelocity(Phaser.Math.Between(-200, 200), 20);
-
+      this.fireball4.displayWidth = 32; this.fireball4.displayHeight = 32;
       // Fireball 5
-      this.fireball5 = this.physics.add.sprite(1500,350, 'fireball5');
+      this.fireball5 = this.physics.add.sprite(1500,350, 'fb1').play('fb');
       this.physics.add.collider(this.fireball5, groundLayer);
       this.fireball5.setBounce(1);
       this.fireball5.setCollideWorldBounds(true);
       this.fireball5.setVelocity(Phaser.Math.Between(-200, 200), 20);
-
+      this.fireball5.displayWidth = 32; this.fireball5.displayHeight = 32;
       // Collisons
       this.physics.add.overlap(this.player, this.coins, this.collectCoin, null, this);
       this.physics.add.collider(this.player, this.fireball, this.hitFireball, null, this);
@@ -172,7 +183,7 @@ export default class GameScene extends Phaser.Scene {
       this.cameras.main.followOffset.set(0, 30);
       // this.cameras.main.startFollow(player, true, 2.0, 2.0);
       // this.cameras.main.setZoom(4);
-      this.cameras.main.setZoom(1.4);
+      this.cameras.main.setZoom(2.5);
   }
 
     update() {

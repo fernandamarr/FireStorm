@@ -34,8 +34,8 @@ export default class AppComponent extends Component {
 
     // eslint-disable-next-line    
     let config = {
-      width: 1200,
-      height: 600,
+      width: 1440,
+      height: 720,
       type: Phaser.AUTO,
       pixelArt: true,
       physics: {
@@ -49,6 +49,7 @@ export default class AppComponent extends Component {
      new Phaser.Game(config);   
 
   }
+  
 
   render() {
     return (
