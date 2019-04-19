@@ -87,7 +87,7 @@ export default class GameScene extends Phaser.Scene {
       this.player = this.physics.add.sprite(100, 350, 'sprite');
 
       // player.displayWidth = 16; player.displayHeight = 36;
-      this.player.displayWidth = 26; this.player.displayHeight = 45;
+      this.player.displayWidth = 30; this.player.displayHeight = 50;
       this.player.setGravity(0,200);
       this.player.setBounce(0.2);
       this.player.setCollideWorldBounds(true);
@@ -220,7 +220,7 @@ export default class GameScene extends Phaser.Scene {
       this.cursors = this.input.keyboard.createCursorKeys();
 
       //score
-      this.scoreText = this.add.text(190, 100, `Score: ${this.coinScore}`, {
+      this.scoreText = this.add.text(300, 200, `Score: ${this.coinScore}`, {
         fontSize: '30px',
         fill: '#0095DD'
       });
@@ -228,7 +228,7 @@ export default class GameScene extends Phaser.Scene {
 
       //lives
       this.lives = 3;
-      this.livesText = this.add.text(190, 150, `Lives: ${this.lives}`, {
+      this.livesText = this.add.text(300, 250, `Lives: ${this.lives}`, {
         fontSize: '30px',
         fill: '#0095DD'
       });
@@ -239,7 +239,7 @@ export default class GameScene extends Phaser.Scene {
       this.cameras.main.followOffset.set(0, 30);
       // this.cameras.main.startFollow(player, true, 2.0, 2.0);
       // this.cameras.main.setZoom(4);
-      this.cameras.main.setZoom(2.5);
+      this.cameras.main.setZoom(1.5);
   }
 
     update() {
