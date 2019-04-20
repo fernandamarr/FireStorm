@@ -2,3 +2,9 @@ body {
   background-color: black;
 }
 
+
+#phaser-game {
+  text-align: center;
+  border: 3px solid #ffa500;
+  margin: 0;
+}
