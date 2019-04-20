@@ -9,7 +9,7 @@ export default class LoadScene extends Phaser.Scene {
         this.load.image("background", "assets/images/blackbg.jpg");
         this.load.image("playbtn", "assets/images/startbtn.jpg");
         this.load.image("title", "assets/images/title.png");
-        this.load.image("killer-layer", "assets/images/killer-layer.png");
+        this.load.image("killer-layer", "assets/images/props.png");
         this.load.image("small-sprite", "assets/images/cropped-sprite.png");
         this.load.image("restartbtn", "assets/images/replaybtn.png");
         this.load.image("gameover-title", "assets/images/gameover.png");
@@ -24,7 +24,12 @@ export default class LoadScene extends Phaser.Scene {
         this.load.image("fb2", "/assets/images/fb500-2.png");
         this.load.image("fb3", "/assets/images/fb500-3.png");
         this.load.image("fb4", "/assets/images/fb500-4.png");
-        this.load.image("fb5", "/assets/images/fb500-5.png")
+        this.load.image("fb5", "/assets/images/fb500-5.png");
+        this.load.image('1', '/assets/images/1.png');
+        this.load.image('2', '/assets/images/2.png');
+        this.load.image('3', '/assets/images/3.png');
+        this.load.image('4', '/assets/images/4.png');
+        this.load.image('5', '/assets/images/5.png');
         this.load.spritesheet("sprite", "assets/images/spritesheet2.png", {
             frameWidth: 32,
             frameHeight: 60
