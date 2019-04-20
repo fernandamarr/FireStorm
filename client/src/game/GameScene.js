@@ -118,7 +118,18 @@ export default class GameScene extends Phaser.Scene {
       frameRate: 10,
       repeat: -1
     });
-
+    // Pit flames
+    this.anims.create({
+      key: 'fg',
+      frames: [
+          { key: '1' },
+          { key: '2' },
+          { key: '3' },
+          { key: '4' },
+          { key: '5', duration: 25 }
+        ],
+        frameRate: 10,
+        repeat: -1 });
     // Fireball 1
     this.fireball = this.physics.add.sprite(500, 250, 'fb1').play('fb');
     this.physics.add.collider(this.fireball, groundLayer);
@@ -319,6 +330,116 @@ export default class GameScene extends Phaser.Scene {
     this.fireball25.setVelocity(Phaser.Math.Between(-200, 200), 20);
     this.fireball25.displayWidth = 32;
     this.fireball25.displayHeight = 32;
+    // Pit Flames
+    this.fg1 = this.physics.add.sprite(888,928, '1').play('fg');
+    this.fg1.setCollideWorldBounds(true);
+    this.fg1.displayWidth = 32; this.fg1.displayHeight = 32;
+    this.fg1 = this.physics.add.sprite(904,928, '1').play('fg');
+    this.fg1.setCollideWorldBounds(true);
+    this.fg1.displayWidth = 32; this.fg1.displayHeight = 32;
+    this.fg1 = this.physics.add.sprite(920,928, '1').play('fg');
+    this.fg1.setCollideWorldBounds(true);
+    this.fg1.displayWidth = 32; this.fg1.displayHeight = 32;
+    this.fg1 = this.physics.add.sprite(936,928, '1').play('fg');
+    this.fg1.setCollideWorldBounds(true);
+    this.fg1.displayWidth = 32; this.fg1.displayHeight = 32;
+    this.fg1 = this.physics.add.sprite(952,928, '1').play('fg');
+    this.fg1.setCollideWorldBounds(true);
+    this.fg1.displayWidth = 32; this.fg1.displayHeight = 32;
+    this.fg1 = this.physics.add.sprite(968,928, '1').play('fg');
+    this.fg1.setCollideWorldBounds(true);
+    this.fg1.displayWidth = 32; this.fg1.displayHeight = 32;
+    this.fg1 = this.physics.add.sprite(984,928, '1').play('fg');
+    this.fg1.setCollideWorldBounds(true);
+    this.fg1.displayWidth = 32; this.fg1.displayHeight = 32;
+    this.fg1 = this.physics.add.sprite(1000,928, '1').play('fg');
+    this.fg1.setCollideWorldBounds(true);
+    this.fg1.displayWidth = 32; this.fg1.displayHeight = 32;
+    this.fg1 = this.physics.add.sprite(1016,928, '1').play('fg');
+    this.fg1.setCollideWorldBounds(true);
+    this.fg1.displayWidth = 32; this.fg1.displayHeight = 32;
+    this.fg1 = this.physics.add.sprite(1032,928, '1').play('fg');
+    this.fg1.setCollideWorldBounds(true);
+    this.fg1.displayWidth = 32; this.fg1.displayHeight = 32;
+    this.fg1 = this.physics.add.sprite(1048,928, '1').play('fg');
+    this.fg1.setCollideWorldBounds(true);
+    this.fg1.displayWidth = 32; this.fg1.displayHeight = 32;
+    this.fg1 = this.physics.add.sprite(1064,928, '1').play('fg');
+    this.fg1.setCollideWorldBounds(true);
+    this.fg1.displayWidth = 32; this.fg1.displayHeight = 32;
+    this.fg1 = this.physics.add.sprite(1080,928, '1').play('fg');
+    this.fg1.setCollideWorldBounds(true);
+    this.fg1.displayWidth = 32; this.fg1.displayHeight = 32;
+    this.fg1 = this.physics.add.sprite(1096,928, '1').play('fg');
+    this.fg1.setCollideWorldBounds(true);
+    this.fg1.displayWidth = 32; this.fg1.displayHeight = 32;
+    this.fg1 = this.physics.add.sprite(1112,928, '1').play('fg');
+    this.fg1.setCollideWorldBounds(true);
+    this.fg1.displayWidth = 32; this.fg1.displayHeight = 32;
+    this.fg1 = this.physics.add.sprite(1128,928, '1').play('fg');
+    this.fg1.setCollideWorldBounds(true);
+    this.fg1.displayWidth = 32; this.fg1.displayHeight = 32;
+    this.fg1 = this.physics.add.sprite(1144,928, '1').play('fg');
+    this.fg1.setCollideWorldBounds(true);
+    this.fg1.displayWidth = 32; this.fg1.displayHeight = 32;
+    this.fg1 = this.physics.add.sprite(1160,928, '1').play('fg');
+    this.fg1.setCollideWorldBounds(true);
+    this.fg1.displayWidth = 32; this.fg1.displayHeight = 32;
+    this.fg1 = this.physics.add.sprite(1176,928, '1').play('fg');
+    this.fg1.setCollideWorldBounds(true);
+    this.fg1.displayWidth = 32; this.fg1.displayHeight = 32;
+    this.fg1 = this.physics.add.sprite(1192,928, '1').play('fg');
+    this.fg1.setCollideWorldBounds(true);
+    this.fg1.displayWidth = 32; this.fg1.displayHeight = 32;
+    this.fg1 = this.physics.add.sprite(1208,928, '1').play('fg');
+    this.fg1.setCollideWorldBounds(true);
+    this.fg1.displayWidth = 32; this.fg1.displayHeight = 32;
+    this.fg1 = this.physics.add.sprite(1224,928, '1').play('fg');
+    this.fg1.setCollideWorldBounds(true);
+    this.fg1.displayWidth = 32; this.fg1.displayHeight = 32;
+    this.fg1 = this.physics.add.sprite(1240,928, '1').play('fg');
+    this.fg1.setCollideWorldBounds(true);
+    this.fg1.displayWidth = 32; this.fg1.displayHeight = 32;
+    this.fg1 = this.physics.add.sprite(1256,928, '1').play('fg');
+    this.fg1.setCollideWorldBounds(true);
+    this.fg1.displayWidth = 32; this.fg1.displayHeight = 32;
+    this.fg1 = this.physics.add.sprite(1272,928, '1').play('fg');
+    this.fg1.setCollideWorldBounds(true);
+    this.fg1.displayWidth = 32; this.fg1.displayHeight = 32;
+    this.fg1 = this.physics.add.sprite(1288,928, '1').play('fg');
+    this.fg1.setCollideWorldBounds(true);
+    this.fg1.displayWidth = 32; this.fg1.displayHeight = 32;
+    this.fg1 = this.physics.add.sprite(1304,928, '1').play('fg');
+    this.fg1.setCollideWorldBounds(true);
+    this.fg1.displayWidth = 32; this.fg1.displayHeight = 32;
+    this.fg1 = this.physics.add.sprite(1320,928, '1').play('fg');
+    this.fg1.setCollideWorldBounds(true);
+    this.fg1.displayWidth = 32; this.fg1.displayHeight = 32;
+    this.fg1 = this.physics.add.sprite(1336,928, '1').play('fg');
+    this.fg1.setCollideWorldBounds(true);
+    this.fg1.displayWidth = 32; this.fg1.displayHeight = 32;
+    this.fg1 = this.physics.add.sprite(1352,928, '1').play('fg');
+    this.fg1.setCollideWorldBounds(true);
+    this.fg1.displayWidth = 32; this.fg1.displayHeight = 32;
+    this.fg1 = this.physics.add.sprite(1368,928, '1').play('fg');
+    this.fg1.setCollideWorldBounds(true);
+    this.fg1.displayWidth = 32; this.fg1.displayHeight = 32;
+    this.fg1 = this.physics.add.sprite(1384,928, '1').play('fg');
+    this.fg1.setCollideWorldBounds(true);
+    this.fg1.displayWidth = 32; this.fg1.displayHeight = 32;
+    this.fg1 = this.physics.add.sprite(1400,928, '1').play('fg');
+    this.fg1.setCollideWorldBounds(true);
+    this.fg1.displayWidth = 32; this.fg1.displayHeight = 32;
+    this.fg1 = this.physics.add.sprite(1416,928, '1').play('fg');
+    this.fg1.setCollideWorldBounds(true);
+    this.fg1.displayWidth = 32; this.fg1.displayHeight = 32;
+    this.fg1 = this.physics.add.sprite(1320,928, '1').play('fg');
+    this.fg1.setCollideWorldBounds(true);
+    this.fg1.displayWidth = 32; this.fg1.displayHeight = 32;
+    this.fg1 = this.physics.add.sprite(1432,928, '1').play('fg');
+    this.fg1.setCollideWorldBounds(true);
+    this.fg1.displayWidth = 32; this.fg1.displayHeight = 32;
+
 
     // Collisons
     this.physics.add.overlap(this.player, this.coins, this.collectCoin, null, this);
