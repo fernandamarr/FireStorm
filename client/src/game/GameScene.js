@@ -3,7 +3,6 @@ import Phaser from 'phaser';
 export default class GameScene extends Phaser.Scene {
   constructor() {
     super({ key: "GameScene" });
-    console.log("Game Scene")
   };
 
   // Set variables for use in create() function
@@ -45,9 +44,9 @@ export default class GameScene extends Phaser.Scene {
   fb;
 
   create() {
-    // Add theme song and loop. Sound will continue to play even when user is not on game screen
-    this.sound.pauseOnBlur = false;
+    // Add theme song and loop.
     this.music = this.sound.add("theme-song");
+    this.music.setLoop(true);
     this.music.play();
 
     // Camera and world bounds
@@ -558,7 +557,6 @@ export default class GameScene extends Phaser.Scene {
   collectCoin(player, coin) {
     coin.destroy(coin.x, coin.y); // remove the tile/coin
     this.coinScore++; // increment the score
-    // console.log("You got a coin!")
     this.scoreText.setText(`Score: ${this.coinScore}`); // set the text to show the current score
     this.sound.play("coin-sound");
     if(this.coinScore === 0) {
@@ -578,18 +576,16 @@ export default class GameScene extends Phaser.Scene {
     } else if (this.lives === 1) {
       player.setTint(0xff7f7f)
     } else {
-      // this.gameover();
       this.physics.pause();
       player.setTint(0xff0000);
       this.cameras.main.shake(400);
       this.music.stop();
       this.sound.play("dead-sound");
-      this.time.delayedCall(2000, function () {
+      this.time.delayedCall(5000, function () {
         this.cameras.main.fade(1000);
         this.scene.stop();
         this.scene.start("GameOver", { score: this.coinScore});
       }, [], this);
-      console.log("YOU DED. GAME OVER")
     }
   }
 
@@ -600,10 +596,9 @@ export default class GameScene extends Phaser.Scene {
     this.music.stop();
     this.sound.play("dead-sound");
     this.time.delayedCall(2000, function () {
-      this.cameras.main.fade(1000);
+      this.cameras.main.fade(5000);
       this.scene.stop();
       this.scene.start("GameOver", { score: this.coinScore});
     }, [], this);
-    console.log("I FELL")
   }
 }

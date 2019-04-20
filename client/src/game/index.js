@@ -26,7 +26,6 @@ export default class AppComponent extends Component {
   }
 
   componentDidCatch(error, info) {
-    console.warn(error, info);
   }
 
   // Game 
