@@ -4,10 +4,16 @@ import GameScene from "./GameScene";
 export default class MenuScene extends Phaser.Scene {
   constructor() {
     super({ key: "MenuScene" })
-    console.log("menu scene started")
   }
 
+  startTheme;
+
   create() {
+    // Song
+    this.startTheme = this.sound.add("start-page-theme-song");
+    this.startTheme.setLoop(true);
+    this.startTheme.play();
+
     this.add.image(0, 0, "background").setOrigin(0);
     // Play button      
     let playBtn = this.add.image(this.game.renderer.width / 2, this.game.renderer.height / 2, "playbtn");
@@ -30,11 +36,11 @@ export default class MenuScene extends Phaser.Scene {
       hoverSprite.setVisible(false);
     })
     playBtn.on("pointerdown", (pointer, targets) => {
+      this.startTheme.stop();
       this.game.scene.start("GameScene", GameScene, true, {
         x: 400,
         y: 300
       });
-      console.log("game scene about to start")
     })
   }
 }

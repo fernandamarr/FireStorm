@@ -3,16 +3,21 @@ import Phaser from 'phaser';
 export default class GameOver extends Phaser.Scene {
     constructor() {
         super({ key: "GameOver" })
-        console.log("game over scene")
     }
 
+    endTheme;
+
     init(data) {
-        console.log('init' + data);
         this.finalScore = data.score;
-        console.log(data.score);
     }
 
     create() {
+        // Song
+        this.endTheme = this.sound.add("game-over-theme-song");
+        this.endTheme.setLoop(true);
+        this.endTheme.play();
+
+        // Background image and title
         this.add.image(0, 0, "background").setOrigin(0);
         this.add.image(this.game.renderer.width / 2, this.game.renderer.height * 0.20, "gameover-title");
 
@@ -29,12 +34,6 @@ export default class GameOver extends Phaser.Scene {
             }
         });
         finalScoreText.setOrigin(0.5, 0.5);
-
-
-        // this.add.text(200,500, `Score: ${this.finalScore}`, {
-        //     font: '30px monospace',
-        //     fill: '#ffffff'
-        // });
 
         // Play button
         let restartBtn = this.add.image(this.game.renderer.width / 2, this.game.renderer.height / 2, "restartbtn");
@@ -56,9 +55,9 @@ export default class GameOver extends Phaser.Scene {
             hoverSprite.setVisible(false);
         })
         restartBtn.on("pointerup", () => {
+            this.endTheme.stop();
             let startScene = this.scene.get("GameScene");
             startScene.scene.start();
-            console.log("game scene about to start AGAIN")
         })
     }
 }

@@ -3,11 +3,9 @@ import Phaser from "phaser";
 export default class LoadScene extends Phaser.Scene {
     constructor() {
         super({ key: "LoadScene" });
-        console.log("load scene started")
     }
 
     preload() {
-        console.log("load scene - preload")
         this.load.image("background", "assets/images/blackbg.jpg");
         this.load.image("playbtn", "assets/images/startbtn.jpg");
         this.load.image("title", "assets/images/title.png");
@@ -33,6 +31,8 @@ export default class LoadScene extends Phaser.Scene {
         });
         this.load.tilemapTiledJSON("map", "assets/trackrmap2.json");
         this.load.audio("theme-song", "assets/audio/theme-song2.mp3");
+        this.load.audio("start-page-theme-song", "assets/audio/start-theme-song.mp3");
+        this.load.audio("game-over-theme-song", "assets/audio/game-over-theme-song.mp3");
         this.load.audio("jump-sound", "assets/audio/jump-sound.mp3");
         this.load.audio("coin-sound", "assets/audio/coin-sound.mp3");
         this.load.audio("dead-sound", "assets/audio/dead-sound.mp3");
@@ -79,7 +79,6 @@ export default class LoadScene extends Phaser.Scene {
 
         this.load.on("complete", () => {
             percentText.destroy();
-            console.log("done")
         });
     }
 
@@ -87,6 +86,5 @@ export default class LoadScene extends Phaser.Scene {
         let background = this.add.sprite(0, 0, "background");
         background.setOrigin(0);
         this.scene.start("MenuScene");
-        console.log("load scene - create");
     }
 }
