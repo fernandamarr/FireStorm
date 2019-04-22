@@ -581,7 +581,7 @@ export default class GameScene extends Phaser.Scene {
       this.cameras.main.shake(400);
       this.music.stop();
       this.sound.play("dead-sound");
-      this.time.delayedCall(5000, function () {
+      this.time.delayedCall(4000, function () {
         this.cameras.main.fade(1000);
         this.scene.stop();
         this.scene.start("GameOver", { score: this.coinScore});
@@ -595,8 +595,8 @@ export default class GameScene extends Phaser.Scene {
     this.cameras.main.shake(400);
     this.music.stop();
     this.sound.play("dead-sound");
-    this.time.delayedCall(2000, function () {
-      this.cameras.main.fade(5000);
+    this.time.delayedCall(4000, function () {
+      this.cameras.main.fade(1000);
       this.scene.stop();
       this.scene.start("GameOver", { score: this.coinScore});
     }, [], this);

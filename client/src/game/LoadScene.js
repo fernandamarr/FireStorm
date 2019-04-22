@@ -6,13 +6,13 @@ export default class LoadScene extends Phaser.Scene {
     }
 
     preload() {
-        this.load.image("background", "assets/images/blackbg.jpg");
-        this.load.image("playbtn", "assets/images/startbtn.jpg");
-        this.load.image("title", "assets/images/title.png");
+        this.load.image("background", "assets/images/start-bg.png");
+        this.load.image("playbtn", "assets/images/start-btn.png");
+        this.load.image("title", "assets/images/title3.png");
         this.load.image("killer-layer", "assets/images/props.png");
         this.load.image("small-sprite", "assets/images/cropped-sprite.png");
-        this.load.image("restartbtn", "assets/images/replaybtn.png");
-        this.load.image("gameover-title", "assets/images/gameover.png");
+        this.load.image("restartbtn", "assets/images/play-again-btn.png");
+        this.load.image("gameover-title", "assets/images/game-over.png");
         this.load.image("title", "assets/images/title.png");
         this.load.image("coin", "assets/images/coin.png");
         this.load.image("tileset", "assets/images/tileset.png");
