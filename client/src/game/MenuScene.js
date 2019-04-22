@@ -14,14 +14,19 @@ export default class MenuScene extends Phaser.Scene {
     this.startTheme.setLoop(true);
     this.startTheme.play();
 
-    this.add.image(0, 0, "background").setOrigin(0);
+    let image = this.add.image(this.cameras.main.width / 2, this.cameras.main.height / 2, 'background')
+    let scaleX = this.cameras.main.width / image.width
+    let scaleY = this.cameras.main.height / image.height
+    let scale = Math.max(scaleX, scaleY);
+    image.setScale(scale).setScrollFactor(0);
+    image.setTint(0xffcccc);
     // Play button      
     let playBtn = this.add.image(this.game.renderer.width / 2, this.game.renderer.height / 2, "playbtn");
     this.add.image(this.game.renderer.width / 2, this.game.renderer.height * 0.20, "title");
 
     // Sprite
     let hoverSprite = this.add.sprite(100, 100, "small-sprite");
-    hoverSprite.setScale(2);
+    hoverSprite.setScale(3);
     hoverSprite.setVisible(false);
 
     // Set button interaction on hover and click (show sprite on hover)
