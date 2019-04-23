@@ -42,7 +42,8 @@ export default class GameScene extends Phaser.Scene {
   lives = 3;
   livesText;
   fb;
-
+  invisible;
+ 
   create() {
     // Add theme song and loop.
     this.music = this.sound.add("theme-song");
@@ -60,11 +61,18 @@ export default class GameScene extends Phaser.Scene {
     let underground = map.addTilesetImage("underground", "underground");
     let undergroundProps = map.addTilesetImage("underground-props", "underground-props");
     let props = map.addTilesetImage("items", "items");
+ 
     let middle = map.addTilesetImage("middle", "middle");
+    // let invisible = map.addTilesetImage("invisible", "invisible");
+
     // eslint-disable-next-line
     let middleLayer = map.createStaticLayer("MiddleLayer", [middle], 0, 0);
     let groundLayer = map.createStaticLayer("GroundLayer", [tileset], 0, 0);
-    let killerLayer = map.createStaticLayer("KillerLayer", [killinglayer], 0, 0)
+    let invisibleWall = map.createStaticLayer("InvisibleWall", [tileset], 0, 0);
+    let bp3 = map.createStaticLayer("BP3", [props], 0, 0);
+    let bp2 = map.createStaticLayer("BP2", [props], 0, 0);
+    let bp1 = map.createStaticLayer("BP1", [props], 0, 0);
+    let killerLayer = map.createStaticLayer("KillerLayer", [killinglayer], 0, 0);
     // eslint-disable-next-line
     let undergroundpropsLayer = map.createStaticLayer("UndergroundProps", [undergroundProps], 0, 0);
     // eslint-disable-next-line
@@ -85,18 +93,23 @@ export default class GameScene extends Phaser.Scene {
     });
 
     // Adds player and sets her to collide with ground tiles
-    this.player = this.physics.add.sprite(100, 250, 'sprite');
-
+    this.player = this.physics.add.sprite(100, 736, 'sprite');
+    let IFP1 = map.createStaticLayer("IFP1", [props], 0, 0);
+    let IFP2 = map.createStaticLayer("IFP2", [props], 0, 0);
+    let IFP3 = map.createStaticLayer("IFP3", [props], 0, 0);
+    let IFP4 = map.createStaticLayer("IFP4", [tileset], 0, 0);
     // player.displayWidth = 16; player.displayHeight = 36;
     this.player.displayWidth = 26;
     this.player.displayHeight = 45;
     this.player.setGravity(0, 200);
     this.player.setBounce(0.2);
     this.player.setCollideWorldBounds(true);
-    groundLayer.setCollisionByProperty({
-      collide: true
-    });
+    //ground collide
+    groundLayer.setCollisionByProperty({collide: true});
     this.physics.add.collider(this.player, groundLayer);
+   //invisible wall collide
+   invisibleWall.setCollisionByProperty({collide: true});
+
 
     // Collide with killer layers and fire killLayer function
     killerLayer.setCollisionByProperty({
@@ -132,6 +145,7 @@ export default class GameScene extends Phaser.Scene {
     // Fireball 1
     this.fireball = this.physics.add.sprite(500, 250, 'fb1').play('fb');
     this.physics.add.collider(this.fireball, groundLayer);
+    this.physics.add.collider(this.fireball, invisibleWall);
     this.fireball.setBounce(1);
     this.fireball.setCollideWorldBounds(true);
     this.fireball.setVelocity(Phaser.Math.Between(-200, 200), 20);
@@ -140,6 +154,7 @@ export default class GameScene extends Phaser.Scene {
     // Fireball 2
     this.fireball2 = this.physics.add.sprite(800, 250, 'fb1').play('fb');
     this.physics.add.collider(this.fireball2, groundLayer);
+    this.physics.add.collider(this.fireball2, invisibleWall);
     this.fireball2.setBounce(1);
     this.fireball2.setCollideWorldBounds(true);
     this.fireball2.setVelocity(Phaser.Math.Between(-200, 200), 20);
@@ -148,6 +163,7 @@ export default class GameScene extends Phaser.Scene {
     // Fireball 3
     this.fireball3 = this.physics.add.sprite(1000, 250, 'fb1').play('fb');
     this.physics.add.collider(this.fireball3, groundLayer);
+    this.physics.add.collider(this.fireball3, invisibleWall);
     this.fireball3.setBounce(1);
     this.fireball3.setCollideWorldBounds(true);
     this.fireball3.setVelocity(Phaser.Math.Between(-200, 200), 20);
@@ -156,6 +172,7 @@ export default class GameScene extends Phaser.Scene {
     // Fireball 4
     this.fireball4 = this.physics.add.sprite(1200, 250, 'fb1').play('fb');
     this.physics.add.collider(this.fireball4, groundLayer);
+    this.physics.add.collider(this.fireball4, invisibleWall);
     this.fireball4.setBounce(1);
     this.fireball4.setCollideWorldBounds(true);
     this.fireball4.setVelocity(Phaser.Math.Between(-200, 200), 20);
@@ -164,6 +181,7 @@ export default class GameScene extends Phaser.Scene {
     // Fireball 5
     this.fireball5 = this.physics.add.sprite(1400, 250, 'fb1').play('fb');
     this.physics.add.collider(this.fireball5, groundLayer);
+    this.physics.add.collider(this.fireball5, invisibleWall);
     this.fireball5.setBounce(1);
     this.fireball5.setCollideWorldBounds(true);
     this.fireball5.setVelocity(Phaser.Math.Between(-200, 200), 20);
@@ -172,6 +190,7 @@ export default class GameScene extends Phaser.Scene {
     // Fireball 6
     this.fireball6 = this.physics.add.sprite(1600, 250, 'fb1').play('fb');
     this.physics.add.collider(this.fireball6, groundLayer);
+    this.physics.add.collider(this.fireball6, invisibleWall);
     this.fireball6.setBounce(1);
     this.fireball6.setCollideWorldBounds(true);
     this.fireball6.setVelocity(Phaser.Math.Between(-200, 200), 20);
@@ -180,6 +199,7 @@ export default class GameScene extends Phaser.Scene {
     // Fireball 7
     this.fireball7 = this.physics.add.sprite(1800, 250, 'fb1').play('fb');
     this.physics.add.collider(this.fireball7, groundLayer);
+    this.physics.add.collider(this.fireball7, invisibleWall);
     this.fireball7.setBounce(1);
     this.fireball7.setCollideWorldBounds(true);
     this.fireball7.setVelocity(Phaser.Math.Between(-200, 200), 20);
@@ -188,6 +208,7 @@ export default class GameScene extends Phaser.Scene {
     // Fireball 8
     this.fireball8 = this.physics.add.sprite(2000, 250, 'fb1').play('fb');
     this.physics.add.collider(this.fireball8, groundLayer);
+    this.physics.add.collider(this.fireball8, invisibleWall);
     this.fireball8.setBounce(1);
     this.fireball8.setCollideWorldBounds(true);
     this.fireball8.setVelocity(Phaser.Math.Between(-200, 200), 20);
@@ -196,6 +217,7 @@ export default class GameScene extends Phaser.Scene {
     // Fireball 9
     this.fireball9 = this.physics.add.sprite(2200, 250, 'fb1').play('fb');
     this.physics.add.collider(this.fireball9, groundLayer);
+    this.physics.add.collider(this.fireball9, invisibleWall);
     this.fireball9.setBounce(1);
     this.fireball9.setCollideWorldBounds(true);
     this.fireball9.setVelocity(Phaser.Math.Between(-200, 200), 20);
@@ -204,6 +226,7 @@ export default class GameScene extends Phaser.Scene {
     // Fireball 10
     this.fireball10 = this.physics.add.sprite(2400, 250, 'fb1').play('fb');
     this.physics.add.collider(this.fireball10, groundLayer);
+    this.physics.add.collider(this.fireball10, invisibleWall);
     this.fireball10.setBounce(1);
     this.fireball10.setCollideWorldBounds(true);
     this.fireball10.setVelocity(Phaser.Math.Between(-200, 200), 20);
@@ -212,6 +235,7 @@ export default class GameScene extends Phaser.Scene {
     // Fireball 11
     this.fireball11 = this.physics.add.sprite(2600, 250, 'fb1').play('fb');
     this.physics.add.collider(this.fireball11, groundLayer);
+    this.physics.add.collider(this.fireball11, invisibleWall);
     this.fireball11.setBounce(1);
     this.fireball11.setCollideWorldBounds(true);
     this.fireball11.setVelocity(Phaser.Math.Between(-200, 200), 20);
@@ -220,6 +244,7 @@ export default class GameScene extends Phaser.Scene {
     // Fireball 12
     this.fireball12 = this.physics.add.sprite(2800, 250, 'fb1').play('fb');
     this.physics.add.collider(this.fireball12, groundLayer);
+    this.physics.add.collider(this.fireball12, invisibleWall);
     this.fireball12.setBounce(1);
     this.fireball12.setCollideWorldBounds(true);
     this.fireball12.setVelocity(Phaser.Math.Between(-200, 200), 20);
@@ -228,6 +253,7 @@ export default class GameScene extends Phaser.Scene {
     // Fireball 13
     this.fireball13 = this.physics.add.sprite(3000, 250, 'fb1').play('fb');
     this.physics.add.collider(this.fireball13, groundLayer);
+    this.physics.add.collider(this.fireball13, invisibleWall);
     this.fireball13.setBounce(1);
     this.fireball13.setCollideWorldBounds(true);
     this.fireball13.setVelocity(Phaser.Math.Between(-200, 200), 20);
@@ -236,6 +262,7 @@ export default class GameScene extends Phaser.Scene {
     // Fireball 14
     this.fireball14 = this.physics.add.sprite(3200, 250, 'fb1').play('fb');
     this.physics.add.collider(this.fireball14, groundLayer);
+    this.physics.add.collider(this.fireball14, invisibleWall);
     this.fireball14.setBounce(1);
     this.fireball14.setCollideWorldBounds(true);
     this.fireball14.setVelocity(Phaser.Math.Between(-200, 200), 20);
@@ -244,6 +271,7 @@ export default class GameScene extends Phaser.Scene {
     // Fireball 15
     this.fireball15 = this.physics.add.sprite(3400, 250, 'fb1').play('fb');
     this.physics.add.collider(this.fireball15, groundLayer);
+    this.physics.add.collider(this.fireball15, invisibleWall);
     this.fireball15.setBounce(1);
     this.fireball15.setCollideWorldBounds(true);
     this.fireball15.setVelocity(Phaser.Math.Between(-200, 200), 20);
@@ -252,6 +280,7 @@ export default class GameScene extends Phaser.Scene {
     // Fireball 16
     this.fireball16 = this.physics.add.sprite(3600, 250, 'fb1').play('fb');
     this.physics.add.collider(this.fireball16, groundLayer);
+    this.physics.add.collider(this.fireball16, invisibleWall);
     this.fireball16.setBounce(1);
     this.fireball16.setCollideWorldBounds(true);
     this.fireball16.setVelocity(Phaser.Math.Between(-200, 200), 20);
@@ -260,6 +289,7 @@ export default class GameScene extends Phaser.Scene {
     // Fireball 17
     this.fireball17 = this.physics.add.sprite(3800, 250, 'fb1').play('fb');
     this.physics.add.collider(this.fireball17, groundLayer);
+    this.physics.add.collider(this.fireball17, invisibleWall);
     this.fireball17.setBounce(1);
     this.fireball17.setCollideWorldBounds(true);
     this.fireball17.setVelocity(Phaser.Math.Between(-200, 200), 20);
@@ -268,6 +298,7 @@ export default class GameScene extends Phaser.Scene {
     // Fireball 18
     this.fireball18 = this.physics.add.sprite(4000, 250, 'fb1').play('fb');
     this.physics.add.collider(this.fireball18, groundLayer);
+    this.physics.add.collider(this.fireball18, invisibleWall);
     this.fireball18.setBounce(1);
     this.fireball18.setCollideWorldBounds(true);
     this.fireball18.setVelocity(Phaser.Math.Between(-200, 200), 20);
@@ -276,6 +307,7 @@ export default class GameScene extends Phaser.Scene {
     // Fireball 19
     this.fireball19 = this.physics.add.sprite(4200, 250, 'fb1').play('fb');
     this.physics.add.collider(this.fireball19, groundLayer);
+    this.physics.add.collider(this.fireball19, invisibleWall);
     this.fireball19.setBounce(1);
     this.fireball19.setCollideWorldBounds(true);
     this.fireball19.setVelocity(Phaser.Math.Between(-200, 200), 20);
@@ -284,6 +316,7 @@ export default class GameScene extends Phaser.Scene {
     // Fireball 20
     this.fireball20 = this.physics.add.sprite(4400, 250, 'fb1').play('fb');
     this.physics.add.collider(this.fireball20, groundLayer);
+    this.physics.add.collider(this.fireball20, invisibleWall);
     this.fireball20.setBounce(1);
     this.fireball20.setCollideWorldBounds(true);
     this.fireball20.setVelocity(Phaser.Math.Between(-200, 200), 20);
@@ -292,6 +325,7 @@ export default class GameScene extends Phaser.Scene {
     // Fireball 21
     this.fireball21 = this.physics.add.sprite(4600, 250, 'fb1').play('fb');
     this.physics.add.collider(this.fireball21, groundLayer);
+    this.physics.add.collider(this.fireball21, invisibleWall);
     this.fireball21.setBounce(1);
     this.fireball21.setCollideWorldBounds(true);
     this.fireball21.setVelocity(Phaser.Math.Between(-200, 200), 20);
@@ -300,32 +334,36 @@ export default class GameScene extends Phaser.Scene {
     // Fireball 22
     this.fireball22 = this.physics.add.sprite(4800, 250, 'fb1').play('fb');
     this.physics.add.collider(this.fireball22, groundLayer);
+    this.physics.add.collider(this.fireball22, invisibleWall);
     this.fireball22.setBounce(1);
     this.fireball22.setCollideWorldBounds(true);
     this.fireball22.setVelocity(Phaser.Math.Between(-200, 200), 20);
     this.fireball22.displayWidth = 32;
     this.fireball22.displayHeight = 32;
     // Fireball 23
-    this.fireball23 = this.physics.add.sprite(5000, 250, 'fb1').play('fb');
+    this.fireball23 = this.physics.add.sprite(4700, 250, 'fb1').play('fb');
     this.physics.add.collider(this.fireball23, groundLayer);
+    this.physics.add.collider(this.fireball23, invisibleWall);
     this.fireball23.setBounce(1);
     this.fireball23.setCollideWorldBounds(true);
     this.fireball23.setVelocity(Phaser.Math.Between(-200, 200), 20);
     this.fireball23.displayWidth = 32;
     this.fireball23.displayHeight = 32;
     // Fireball 24
-    this.fireball24 = this.physics.add.sprite(5100, 250, 'fb1').play('fb');
+    this.fireball24 = this.physics.add.sprite(4750, 250, 'fb1').play('fb');
     this.physics.add.collider(this.fireball24, groundLayer);
+    this.physics.add.collider(this.fireball24, invisibleWall);
     this.fireball24.setBounce(1);
     this.fireball24.setCollideWorldBounds(true);
     this.fireball24.setVelocity(Phaser.Math.Between(-200, 200), 20);
     this.fireball24.displayWidth = 32;
     this.fireball24.displayHeight = 32;
     // Fireball 25
-    this.fireball25 = this.physics.add.sprite(5100, 250, 'fb1').play('fb');
+    this.fireball25 = this.physics.add.sprite(3000, 250, 'fb1').play('fb');
     this.physics.add.collider(this.fireball25, groundLayer);
+    this.physics.add.collider(this.fireball25, invisibleWall);
     this.fireball25.setBounce(1);
-    this.fireball25.setCollideWorldBounds(true);
+    this.fireball25.setCollideWorldBounds(true0;
     this.fireball25.setVelocity(Phaser.Math.Between(-200, 200), 20);
     this.fireball25.displayWidth = 32;
     this.fireball25.displayHeight = 32;
