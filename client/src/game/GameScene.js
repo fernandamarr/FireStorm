@@ -88,8 +88,8 @@ export default class GameScene extends Phaser.Scene {
     this.player = this.physics.add.sprite(100, 250, 'sprite');
 
     // player.displayWidth = 16; player.displayHeight = 36;
-    this.player.displayWidth = 30;
-    this.player.displayHeight = 50;
+    this.player.displayWidth = 26;
+    this.player.displayHeight = 45;
     this.player.setGravity(0, 200);
     this.player.setBounce(0.2);
     this.player.setCollideWorldBounds(true);
@@ -529,7 +529,7 @@ export default class GameScene extends Phaser.Scene {
     this.cameras.main.followOffset.set(0, 30);
     // this.cameras.main.startFollow(player, true, 2.0, 2.0);
     // this.cameras.main.setZoom(4);
-    this.cameras.main.setZoom(1.5);
+    this.cameras.main.setZoom(2.25);
   }
 
   update() {
