@@ -1,19 +1,43 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+const bcrypt = require('bcrypt-nodejs');
 
 const playerSchema = new Schema ({
-    // first/last name to display as a start function
-    // ex: Welcome (insert first/last name) to the game!
-    firstName: {type: String, require: true},
-    lastName: {type: String, require: true},
-
-    // email/password for passport (user verification)
-    email: {type: String, require: true},
-    password: {type: String, require: true},
-    // just to date when they signed on/started playing
+    name: {type: String, required: false},
+    email: {type: String, required: true},
+    password: {type: String, required: true},
     date: {type: Date, default: Date.now}
 });
 
-const Player = mongoose.model("Player", playerSchema);
+playerSchema.pre('save', function(next) {
+    let player = this;
+    if (this.isModified('password') || this.isNew) {
+        bcrypt.genSalt(10, (err, salt) => {
+            if(err) {
+                return next(err);
+            }
+            bcrypt.hash(player.password, salt, null, (err, hash) => {
+                if(err) {
+                    return next(err);
+                }
+                player.password = hash;
+                next();
+            });
+        });
+    } else {
+        return next();
+    }
+});
+
+playerSchema.methods.comparePassword = function(passw, cb) {
+    bcrypt.compare(passw, this.password, function(err, isMatch) {
+        if (err) {
+            return cb(err);
+        }
+        cb(null, isMatch);
+    });
+};
+
+const Player = mongoose.model('Player', playerSchema);
 
 module.exports = Player;

@@ -1,8 +1,8 @@
 const router = require("express").Router();
-const playerRoutes = require("./players");
+const playerRoutes = require("./players.js");
 
 // player Routes
 
-router.use("/players", playerRoutes);
+router.use("/player", playerRoutes);
 
 module.exports = router;

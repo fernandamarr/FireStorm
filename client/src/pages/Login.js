@@ -1,46 +1,51 @@
 import React, { Component } from "react";
+// import ReactDOM from 'react-dom';
 import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
-import API from "../utils/API";
+// import API from "../utils/API";
 import { Link } from "react-router-dom";
-import { Input, FormBtn } from "../components/Input";
-import SignUpBtn from "../components/SignUp";
+import { Input } from "../components/Input";
+// import SignUpBtn from "../components/SignUp";
+import axios from 'axios';
 
 
 class Login extends Component {
-    state = {
 
-        email: "",
-        password: ""
+    constructor() {
+        super();
+        this.state = {
+            email: "",
+            password: "",
+            message: ""
+        };
+    }
+ 
+    onChange = (e) => {
+        const state = this.state
+        state[e.target.name] = e.target.value;
+        this.setState(state);
+      }
 
-    };
-
-    handleInputChange = e => {
-        const { name, value } = e.target;
-        this.setState({
-            [name]: value
-        });
-    };
-
-    // HI CESAR!!!
-    // This function is just in place to NOT throw an error
-    // re-format/edit as you want
-
-    handleFormSubmit = e => {
-        e.preventDefault();
-        if (this.state.email && this.state.password) {
-            API.savePlayer({
-
-                email: this.state.email,
-                password: this.state.password
-            })
-                .then(res => res.json())
-                .catch(err => console.log(err));
-
+    onSubmit = (e) => {
+    e.preventDefault();
+    const { email, password } = this.state;
+    axios.post('/api/player/login', { email, password })
+        .then((result) => {
+        localStorage.setItem('jwtToken', result.data.token);
+        this.setState({ message: '' });
+        console.log("redirecting to game");
+        this.props.history.push('/game');
+        }).catch((error) => {
+        if(error.response.status === 401) {
+            alert("can't log you in");
+            console.log("log in failed");
+            this.setState({ message: 'Login failed. email or password do not match' });
         }
-    };
+        });
+    }
 
     render() {
+        const { email, password, message } = this.state;
         return (
             <Container fluid>
                 <Row >
@@ -48,26 +53,34 @@ class Login extends Component {
                         <Jumbotron>
                             <h1>Welcome! Please login to play!  </h1>
                         </Jumbotron>
-                        <form>
+                        <form className="form-signin" onSubmit={this.onSubmit}>
+                        {message !== '' &&
+                        <div className="alert alert-warning alert-dismissible" role="alert">
+                        { message }
+                        </div>
+                        }
                             <Input
-                                value={this.state.email}
-                                onChange={this.handleInputChange}
+                                value={email}
+                                onChange={this.onChange}
                                 name="email"
                                 placeholder="Email (required)"
-                            />
+                                required
+                            />         
                             <Input
-                                value={this.state.password}
-                                onChange={this.handleInputChange}
+                                type="password"
+                                value={password}
+                                onChange={this.onChange}
                                 name="password"
-                                placeholder="Password (MOST DEF REQUIRED SON!)"
+                                placeholder="Password (required)"
+                                required
                             />
-                            <Link to="/signup">
-                                <SignUpBtn>Sign UP Sucka!</SignUpBtn>
-                            </Link>
-
-                            <Link to="/game">
-                                <FormBtn>Ready to Play!</FormBtn>
-                            </Link>
+ 
+                            {/* <FormBtn>Log In To Play!</FormBtn> */}
+                            <button className="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+                             <span className="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+                             <p className="text-white">
+                            Not a member? <Link to="/signup"><span className="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Register here</Link>
+                            </p>
                         </form>
                     </Col>
                 </Row>
@@ -75,7 +88,6 @@ class Login extends Component {
                     <Col className="gif" size="md-6">
                     </Col>
                 </Row>
-                
             </Container>
         )
     }

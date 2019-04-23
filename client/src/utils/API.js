@@ -2,18 +2,30 @@ import axios from "axios";
 
 export default {
     // Get all Players
-    getPlayers: function() {
-        return axios.get("/api/players");
+    getPlayers: function () {
+        console.log("PLAYER HERE")
+        return axios.get("/api/player");
     },
-    // Gets the player with the given id
-    getPlayer: function(id){
-        return axios.get("/api/players/" + id);
+    // Gets the user with the given id
+    getPlayer: function (id) {
+        axios.defaults.headers.common['Authorization'] = localStorage.getItem('jwtToken');
+        console.log("player route");
+        console.log(id)
+        return axios.get("/api/player/" + id);
     },
     // Deletes the player with the given id
-    deletePlayer: function(id){
-        return axios.delete("/api/players/"+ id);
+    deletePlayer: function (id) {
+        return axios.delete("/api/player/" + id);
     },
-    savePlayer: function(playerData){
-        return axios.post("/api/players", playerData);
-    }
+    savePlayer: function (playerData) {
+        return axios.post("/api/player", playerData);
+    },
+    signupUser: function (playerData) {
+        console.log("signing up user")
+        return axios.post("/api/player/signup", playerData);
+    },
+    loginUser: function (playerData) {
+        console.log("login in user")
+        return axios.post("/api/player/login", playerData);
+    },
 };
