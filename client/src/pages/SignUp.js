@@ -1,90 +1,79 @@
 import React, { Component } from "react";
+import ReactDOM from 'react-dom';
+import { Link } from "react-router-dom";
+import axios from 'axios';
 import { Col, Row, Container } from "../components/SignUpGrid";
 import Jumbotron from "../components/Jumbotron";
-import API from "../utils/API";
-import { Link } from "react-router-dom";
+// import API from "../utils/API";
 import { Input } from "../components/Input";
-import SignUpBtn from "../components/SignUp";
-
-
+// import SignUpBtn from "../components/SignUp";
 
 class SignUp extends Component {
-    state = {
-        firstName: "",
-        lastName: "",
-        email: "",
-        password: ""
-    }
-    handleInputChange = e => {
-        const { name, value } = e.target;
-        this.setState({
-            [name]: value
-        })
-    };
 
-    // HEY CESAR IF YOU ARE LOOKING AT THIS AND WANT TO ADJUST
-    // GO AHEAD :)
-    handleFormSubmit = e => {
-        e.preventDefault();
-        if (this.state.firstName && this.state.lastName && this.state.email && this.state.password) {
-            API.savePlayer({
-                firstName: this.state.firstName,
-                lastName: this.state.lastName,
-                email: this.state.email,
-                password: this.state.password
-            })
-                .then(res => res.json())
-                .catch(err => console.log(err));
+    constructor() {
+        super();
+        this.state = {
+            name: "",
+            email: "",
+            password: ""
         }
-    };
+    }
+
+    onChange = (e) => {
+        const state = this.state
+        state[e.target.name] = e.target.value;
+        this.setState(state);
+      }
+
+    onSubmit = (e) => {
+    e.preventDefault();
+    const { name, email, password } = this.state;
+    axios.post('/api/player/signup', { name, email, password })
+        .then((result) => {
+            this.props.history.push("/login"); 
+            alert("you are signed up")          
+            console.log("successfully signed up")
+        }).catch(error => console.log(error));
+    }
 
     render() {
+        const { name, email, password } = this.state;
         return (
             <Container fluid>
                 <Row>
                     <Col size="md-6">
                         <Jumbotron>
-                            <h1 className="heading-primary"> Sign-Up  </h1>
+                            <h1 className="heading-primary"> Sign-Up </h1>
                         </Jumbotron>
-                        <form>
+                        <form className="form-signin" onSubmit={this.onSubmit}>
                             <Input
-                                value={this.state.firstName}
-                                onChange={this.handleInputChange}
-                                name="firstName"
-                                placeholder="First Name (sort of required)"
+                                value={name}
+                                onChange={this.onChange}
+                                name="name"
+                                placeholder="Enter Your Name"
                             />
                             <Input
-                                value={this.state.lastName}
-                                onChange={this.handleInputChange}
-                                name="lastName"
-                                placeholder="Last Name (just do it)"
-                            />
-                            <Input
-                                value={this.state.email}
-                                onChange={this.handleInputChange}
+                                value={email}
+                                onChange={this.onChange}
                                 name="email"
                                 placeholder="Email (required)"
+                                required
                             />
                             <Input
-                                value={this.state.password}
-                                onChange={this.handleInputChange}
+                                value={password}
+                                onChange={this.onChange}
                                 name="password"
-                                placeholder="Password (MOST DEF REQUIRED SON!)"
+                                placeholder="Password (required)"
+                                required
                             />
                             
-                                <Link to="/">
-                                <SignUpBtn>Return to Login</SignUpBtn>
-                                    
-                            </Link>
                            
+                            <button className="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+                       
                         </form>
                     </Col>
                 </Row>
             </Container>
-
-
-
-
         )
     }
 }

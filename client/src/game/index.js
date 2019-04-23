@@ -4,9 +4,10 @@ import LoadScene from "./LoadScene";
 import MenuScene from "./MenuScene";
 import GameScene from "./GameScene";
 import GameOver from "./GameOver";
+import axios from "axios";
 import "./styles.css";
 
-export default class AppComponent extends Component {
+export default class App extends Component {
 
   constructor(props) {
     super(props);
@@ -19,11 +20,24 @@ export default class AppComponent extends Component {
 
   // React Component LifeCycle
   componentDidMount() {
-    this.setState({
-      isGameStarted: true
-    });
-    this.startGame();
+    axios.defaults.headers.common['Authorization'] = localStorage.getItem('jwtToken');
+    axios.get('/api/player/game')
+      .then(res => {
+        this.setState({ isGameStarted: true });
+        this.startGame();
+        console.log(this.state);
+      })
+      .catch((error) => {
+        if(error.response.status === 401) {
+          this.props.history.push("/login");
+        }
+      });
   }
+
+  // logout = () => {
+  //   localStorage.removeItem('jwtToken');
+  //   window.location.reload();
+  // }
 
   componentDidCatch(error, info) {
   }
@@ -52,8 +66,13 @@ export default class AppComponent extends Component {
   }
 
   render() {
-    return ( <
-      div id = "phaser-game" / >
-    );
+    return (
+      <div>
+         {/* {localStorage.getItem('jwtToken') &&
+            <button class="btn btn-primary" onClick={this.logout}>Logout</button>
+          } */}
+          <div id="phaser-game"></div>
+      </div>
+    )
   }
 }
