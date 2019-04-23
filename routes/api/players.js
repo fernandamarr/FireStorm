@@ -42,7 +42,6 @@ router.post('/game', passport.authenticate('jwt', {
 
 // Route for player sign up
 router.post('/signup', function (req, res) {
-    console.log("SIGN UP PLAYER ROUTE")
     if (!req.body.email || !req.body.password) {
         res.json({
             success: false,
