@@ -3,14 +3,11 @@ import axios from "axios";
 export default {
     // Get all Players
     getPlayers: function () {
-        console.log("PLAYER HERE")
         return axios.get("/api/player");
     },
     // Gets the user with the given id
     getPlayer: function (id) {
         axios.defaults.headers.common['Authorization'] = localStorage.getItem('jwtToken');
-        console.log("player route");
-        console.log(id)
         return axios.get("/api/player/" + id);
     },
     // Deletes the player with the given id

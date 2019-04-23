@@ -24,6 +24,22 @@ export default class MenuScene extends Phaser.Scene {
     let playBtn = this.add.image(this.game.renderer.width / 2, this.game.renderer.height / 2, "playbtn");
     this.add.image(this.game.renderer.width / 2, this.game.renderer.height * 0.20, "title");
 
+     // Player score
+     let width = this.cameras.main.width;
+     let height = this.cameras.main.height;
+     let descriptionText = this.make.text({
+         x: width / 2,
+         y: height / 2 - 90,
+         text: "Reach the end without getting hit by the fireballs!",
+         style: {
+             font: "30px monospace",
+             fill: "#E25822",
+             stroke: '#000',
+             strokeThickness: 10
+         }
+     });
+     descriptionText.setOrigin(0.5, 0.5);
+
     // Sprite
     let hoverSprite = this.add.sprite(100, 100, "small-sprite");
     hoverSprite.setScale(3);

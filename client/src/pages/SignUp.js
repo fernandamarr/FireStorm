@@ -31,8 +31,7 @@ class SignUp extends Component {
     axios.post('/api/player/signup', { name, email, password })
         .then((result) => {
             this.props.history.push("/login"); 
-            alert("you are signed up")          
-            console.log("successfully signed up")
+            alert("You are signed up!")          
         }).catch(error => console.log(error));
     }
 

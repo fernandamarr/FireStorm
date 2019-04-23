@@ -33,12 +33,9 @@ class Login extends Component {
         .then((result) => {
         localStorage.setItem('jwtToken', result.data.token);
         this.setState({ message: '' });
-        console.log("redirecting to game");
         this.props.history.push('/game');
         }).catch((error) => {
         if(error.response.status === 401) {
-            alert("can't log you in");
-            console.log("log in failed");
             this.setState({ message: 'Login failed. email or password do not match' });
         }
         });
