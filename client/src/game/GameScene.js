@@ -564,31 +564,31 @@ export default class GameScene extends Phaser.Scene {
 
     // Collisons
     this.physics.add.overlap(this.player, this.coins, this.collectCoin, null, this);
-    this.physics.add.collider(this.player, this.fireball, this.hitFireball, null, this);
-    this.physics.add.collider(this.player, this.fireball2, this.hitFireball, null, this);
-    this.physics.add.collider(this.player, this.fireball3, this.hitFireball, null, this);
-    this.physics.add.collider(this.player, this.fireball4, this.hitFireball, null, this);
-    this.physics.add.collider(this.player, this.fireball5, this.hitFireball, null, this);
-    this.physics.add.collider(this.player, this.fireball6, this.hitFireball, null, this);
-    this.physics.add.collider(this.player, this.fireball7, this.hitFireball, null, this);
-    this.physics.add.collider(this.player, this.fireball8, this.hitFireball, null, this);
-    this.physics.add.collider(this.player, this.fireball9, this.hitFireball, null, this);
-    this.physics.add.collider(this.player, this.fireball10, this.hitFireball, null, this);
-    this.physics.add.collider(this.player, this.fireball11, this.hitFireball, null, this);
-    this.physics.add.collider(this.player, this.fireball12, this.hitFireball, null, this);
-    this.physics.add.collider(this.player, this.fireball13, this.hitFireball, null, this);
-    this.physics.add.collider(this.player, this.fireball14, this.hitFireball, null, this);
-    this.physics.add.collider(this.player, this.fireball15, this.hitFireball, null, this);
-    this.physics.add.collider(this.player, this.fireball16, this.hitFireball, null, this);
-    this.physics.add.collider(this.player, this.fireball17, this.hitFireball, null, this);
-    this.physics.add.collider(this.player, this.fireball18, this.hitFireball, null, this);
-    this.physics.add.collider(this.player, this.fireball19, this.hitFireball, null, this);
-    this.physics.add.collider(this.player, this.fireball20, this.hitFireball, null, this);
-    this.physics.add.collider(this.player, this.fireball21, this.hitFireball, null, this);
-    this.physics.add.collider(this.player, this.fireball22, this.hitFireball, null, this);
-    this.physics.add.collider(this.player, this.fireball23, this.hitFireball, null, this);
-    this.physics.add.collider(this.player, this.fireball24, this.hitFireball, null, this);
-    this.physics.add.collider(this.player, this.fireball25, this.hitFireball, null, this);
+    // this.physics.add.collider(this.player, this.fireball, this.hitFireball, null, this);
+    // this.physics.add.collider(this.player, this.fireball2, this.hitFireball, null, this);
+    // this.physics.add.collider(this.player, this.fireball3, this.hitFireball, null, this);
+    // this.physics.add.collider(this.player, this.fireball4, this.hitFireball, null, this);
+    // this.physics.add.collider(this.player, this.fireball5, this.hitFireball, null, this);
+    // this.physics.add.collider(this.player, this.fireball6, this.hitFireball, null, this);
+    // this.physics.add.collider(this.player, this.fireball7, this.hitFireball, null, this);
+    // this.physics.add.collider(this.player, this.fireball8, this.hitFireball, null, this);
+    // this.physics.add.collider(this.player, this.fireball9, this.hitFireball, null, this);
+    // this.physics.add.collider(this.player, this.fireball10, this.hitFireball, null, this);
+    // this.physics.add.collider(this.player, this.fireball11, this.hitFireball, null, this);
+    // this.physics.add.collider(this.player, this.fireball12, this.hitFireball, null, this);
+    // this.physics.add.collider(this.player, this.fireball13, this.hitFireball, null, this);
+    // this.physics.add.collider(this.player, this.fireball14, this.hitFireball, null, this);
+    // this.physics.add.collider(this.player, this.fireball15, this.hitFireball, null, this);
+    // this.physics.add.collider(this.player, this.fireball16, this.hitFireball, null, this);
+    // this.physics.add.collider(this.player, this.fireball17, this.hitFireball, null, this);
+    // this.physics.add.collider(this.player, this.fireball18, this.hitFireball, null, this);
+    // this.physics.add.collider(this.player, this.fireball19, this.hitFireball, null, this);
+    // this.physics.add.collider(this.player, this.fireball20, this.hitFireball, null, this);
+    // this.physics.add.collider(this.player, this.fireball21, this.hitFireball, null, this);
+    // this.physics.add.collider(this.player, this.fireball22, this.hitFireball, null, this);
+    // this.physics.add.collider(this.player, this.fireball23, this.hitFireball, null, this);
+    // this.physics.add.collider(this.player, this.fireball24, this.hitFireball, null, this);
+    // this.physics.add.collider(this.player, this.fireball25, this.hitFireball, null, this);
 
     // Set logic and images for sprite movement
     this.anims.create({
