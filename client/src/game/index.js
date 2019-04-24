@@ -34,11 +34,6 @@ export default class App extends Component {
       });
   }
 
-  // logout = () => {
-  //   localStorage.removeItem('jwtToken');
-  //   window.location.reload();
-  // }
-
   componentDidCatch(error, info) {
   }
 
@@ -46,8 +41,8 @@ export default class App extends Component {
   startGame() {
     // eslint-disable-next-line    
     let config = {
-      width: 1900,
-      height: 1060,
+      width: 1200,
+      height: 600,
       type: Phaser.AUTO,
       pixelArt: true,
       physics: {
@@ -68,9 +63,6 @@ export default class App extends Component {
   render() {
     return (
       <div>
-         {/* {localStorage.getItem('jwtToken') &&
-            <button class="btn btn-primary" onClick={this.logout}>Logout</button>
-          } */}
           <div id="phaser-game"></div>
       </div>
     )

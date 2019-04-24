@@ -48,7 +48,7 @@ export default class GameOver extends Phaser.Scene {
 
         // Sprite
         let hoverSprite = this.add.sprite(100, 100, "small-sprite");
-        hoverSprite.setScale(3);
+        hoverSprite.setScale(2.5);
         hoverSprite.setVisible(false);
 
         // Set button interaction on hover and click (show sprite on hover)
