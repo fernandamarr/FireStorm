@@ -545,29 +545,30 @@ export default class GameScene extends Phaser.Scene {
 
     // Add button cursors to use in update() function
     this.cursors = this.input.keyboard.createCursorKeys();
-
-    //lives
-    this.lives = 3;
-    this.livesText = this.add.text(300, 150, `Lives: ${this.lives}`, {
-      font: '25px monospace',
-      fill: '#000000'
-    });
-    this.livesText.setScrollFactor(0);
-
-    //score
-    this.coinScore = 0
-    this.scoreText = this.add.text(300, 200, `Score: ${this.coinScore}`, {
-      font: '25px monospace',
-      fill: '#000000'
-    });
-    this.scoreText.setScrollFactor(0);
+        //lives
+        this.lives = 3;
+        this.livesText = this.add.text(550, 300, `Lives: ${this.lives}`, {
+          font: '25px monospace',
+          fill: '#000000'
+        });
+        this.livesText.setScrollFactor(0);
+    
+        //score
+        this.coinScore = 0
+        this.scoreText = this.add.text(550, 325, `Score: ${this.coinScore}`, {
+          font: '25px monospace',
+          fill: '#000000'
+        });
+        this.scoreText.setScrollFactor(0);
+    
 
     // Camera and zoom
     this.cameras.main.startFollow(this.player, true, 0.5, 1.0);
-    this.cameras.main.followOffset.set(0, 30);
+    this.cameras.main.followOffset.set(0, 0);
     // this.cameras.main.startFollow(player, true, 2.0, 2.0);
     // this.cameras.main.setZoom(4);
     this.cameras.main.setZoom(2.25);
+
   }
 
   update() {

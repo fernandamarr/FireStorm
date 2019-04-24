@@ -164,7 +164,7 @@
                  "value":true
                 }],
          "type":"tilelayer",
-         "visible":false,
+         "visible":true,
          "width":350,
          "x":0,
          "y":0
