@@ -69,8 +69,11 @@ export default class GameScene extends Phaser.Scene {
     let middleLayer = map.createStaticLayer("MiddleLayer", [middle], 0, 0);
     let groundLayer = map.createStaticLayer("GroundLayer", [tileset], 0, 0);
     let invisibleWall = map.createStaticLayer("InvisibleWall", [tileset], 0, 0);
+    // eslint-disable-next-line
     let bp3 = map.createStaticLayer("BP3", [props], 0, 0);
+    // eslint-disable-next-line
     let bp2 = map.createStaticLayer("BP2", [props], 0, 0);
+    // eslint-disable-next-line
     let bp1 = map.createStaticLayer("BP1", [props], 0, 0);
     let killerLayer = map.createStaticLayer("KillerLayer", [killinglayer], 0, 0);
     // eslint-disable-next-line
@@ -94,9 +97,13 @@ export default class GameScene extends Phaser.Scene {
 
     // Adds player and sets her to collide with ground tiles
     this.player = this.physics.add.sprite(100, 736, 'sprite');
+    // eslint-disable-next-line
     let IFP1 = map.createStaticLayer("IFP1", [props], 0, 0);
+    // eslint-disable-next-line
     let IFP2 = map.createStaticLayer("IFP2", [props], 0, 0);
+    // eslint-disable-next-line
     let IFP3 = map.createStaticLayer("IFP3", [props], 0, 0);
+    // eslint-disable-next-line
     let IFP4 = map.createStaticLayer("IFP4", [tileset], 0, 0);
     // player.displayWidth = 16; player.displayHeight = 36;
     this.player.displayWidth = 26;
@@ -363,7 +370,7 @@ export default class GameScene extends Phaser.Scene {
     this.physics.add.collider(this.fireball25, groundLayer);
     this.physics.add.collider(this.fireball25, invisibleWall);
     this.fireball25.setBounce(1);
-    this.fireball25.setCollideWorldBounds(true0;
+    this.fireball25.setCollideWorldBounds(true);
     this.fireball25.setVelocity(Phaser.Math.Between(-200, 200), 20);
     this.fireball25.displayWidth = 32;
     this.fireball25.displayHeight = 32;
@@ -548,16 +555,16 @@ export default class GameScene extends Phaser.Scene {
 
     //lives
     this.lives = 3;
-    this.livesText = this.add.text(300, 150, `Lives: ${this.lives}`, {
-      font: '25px monospace',
+    this.livesText = this.make.text(200, 600, `Lives: ${this.lives}`, {
+      font: '30px monospace',
       fill: '#000000'
     });
     this.livesText.setScrollFactor(0);
 
     //score
     this.coinScore = 0
-    this.scoreText = this.add.text(300, 200, `Score: ${this.coinScore}`, {
-      font: '25px monospace',
+    this.scoreText = this.make.text(200, 650, `Score: ${this.coinScore}`, {
+      font: '30px monospace',
       fill: '#000000'
     });
     this.scoreText.setScrollFactor(0);
@@ -601,7 +608,6 @@ export default class GameScene extends Phaser.Scene {
       this.coinScore = 0;
     }
     return false;
-
   }
 
   // Fireball and scene restart on 0 lives
