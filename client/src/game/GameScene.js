@@ -555,17 +555,17 @@ export default class GameScene extends Phaser.Scene {
 
     //lives
     this.lives = 3;
-    this.livesText = this.make.text(200, 600, `Lives: ${this.lives}`, {
-      font: '30px monospace',
-      fill: '#000000'
+    this.livesText = this.add.text(600, 350, `Lives: ${this.lives}`, {
+      font: '25px monospace',
+      fill: '#000'
     });
     this.livesText.setScrollFactor(0);
 
     //score
     this.coinScore = 0
-    this.scoreText = this.make.text(200, 650, `Score: ${this.coinScore}`, {
-      font: '30px monospace',
-      fill: '#000000'
+    this.scoreText = this.add.text(600, 400, `Score: ${this.coinScore}`, {
+      font: '25px monospace',
+      fill: '#000'
     });
     this.scoreText.setScrollFactor(0);
 
