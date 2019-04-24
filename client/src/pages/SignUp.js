@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import ReactDOM from 'react-dom';
-import { Link } from "react-router-dom";
+// import ReactDOM from 'react-dom';
+// import { Link } from "react-router-dom";
 import axios from 'axios';
 import { Col, Row, Container } from "../components/SignUpGrid";
 import Jumbotron from "../components/Jumbotron";
@@ -31,8 +31,7 @@ class SignUp extends Component {
     axios.post('/api/player/signup', { name, email, password })
         .then((result) => {
             this.props.history.push("/login"); 
-            alert("you are signed up")          
-            console.log("successfully signed up")
+            alert("You are signed up!")          
         }).catch(error => console.log(error));
     }
 

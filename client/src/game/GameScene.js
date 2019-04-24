@@ -69,8 +69,11 @@ export default class GameScene extends Phaser.Scene {
     let middleLayer = map.createStaticLayer("MiddleLayer", [middle], 0, 0);
     let groundLayer = map.createStaticLayer("GroundLayer", [tileset], 0, 0);
     let invisibleWall = map.createStaticLayer("InvisibleWall", [tileset], 0, 0);
+    // eslint-disable-next-line
     let bp3 = map.createStaticLayer("BP3", [props], 0, 0);
+    // eslint-disable-next-line
     let bp2 = map.createStaticLayer("BP2", [props], 0, 0);
+    // eslint-disable-next-line
     let bp1 = map.createStaticLayer("BP1", [props], 0, 0);
     let killerLayer = map.createStaticLayer("KillerLayer", [killinglayer], 0, 0);
     // eslint-disable-next-line
@@ -94,9 +97,13 @@ export default class GameScene extends Phaser.Scene {
 
     // Adds player and sets her to collide with ground tiles
     this.player = this.physics.add.sprite(100, 736, 'sprite');
+    // eslint-disable-next-line
     let IFP1 = map.createStaticLayer("IFP1", [props], 0, 0);
+    // eslint-disable-next-line
     let IFP2 = map.createStaticLayer("IFP2", [props], 0, 0);
+    // eslint-disable-next-line
     let IFP3 = map.createStaticLayer("IFP3", [props], 0, 0);
+    // eslint-disable-next-line
     let IFP4 = map.createStaticLayer("IFP4", [tileset], 0, 0);
     // player.displayWidth = 16; player.displayHeight = 36;
     this.player.displayWidth = 26;
@@ -602,7 +609,6 @@ export default class GameScene extends Phaser.Scene {
       this.coinScore = 0;
     }
     return false;
-
   }
 
   // Fireball and scene restart on 0 lives

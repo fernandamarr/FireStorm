@@ -164,7 +164,11 @@
                  "value":true
                 }],
          "type":"tilelayer",
+<<<<<<< HEAD
          "visible":true,
+=======
+         "visible":false,
+>>>>>>> b5942c92c3c028f07de8f32172cc425bfe3b4dd0
          "width":350,
          "x":0,
          "y":0

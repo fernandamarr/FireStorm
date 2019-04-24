@@ -12,6 +12,7 @@ export default class LoadScene extends Phaser.Scene {
         this.load.image("killer-layer", "assets/images/props.png");
         this.load.image("small-sprite", "assets/images/cropped-sprite.png");
         this.load.image("restartbtn", "assets/images/play-again-btn.png");
+        this.load.image("logout-btn", "assets/images/logout-btn.png");
         this.load.image("gameover-title", "assets/images/game-over.png");
         this.load.image("title", "assets/images/title.png");
         this.load.image("coin", "assets/images/coin.png");
