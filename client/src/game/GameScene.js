@@ -363,7 +363,7 @@ export default class GameScene extends Phaser.Scene {
     this.physics.add.collider(this.fireball25, groundLayer);
     this.physics.add.collider(this.fireball25, invisibleWall);
     this.fireball25.setBounce(1);
-    this.fireball25.setCollideWorldBounds(true0;
+    this.fireball25.setCollideWorldBounds(true);
     this.fireball25.setVelocity(Phaser.Math.Between(-200, 200), 20);
     this.fireball25.displayWidth = 32;
     this.fireball25.displayHeight = 32;
