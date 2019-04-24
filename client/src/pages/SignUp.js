@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import ReactDOM from 'react-dom';
-import { Link } from "react-router-dom";
+// import ReactDOM from 'react-dom';
+// import { Link } from "react-router-dom";
 import axios from 'axios';
 import { Col, Row, Container } from "../components/SignUpGrid";
 import Jumbotron from "../components/Jumbotron";
