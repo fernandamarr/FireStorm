@@ -6,6 +6,8 @@ import Jumbotron from "../components/Jumbotron";
 import { Link } from "react-router-dom";
 import { Input } from "../components/Input";
 // import SignUpBtn from "../components/SignUp";
+
+import {Modal, Header, modalBody} from "../components/Modal";
 import axios from 'axios';
 
 
@@ -82,7 +84,17 @@ class Login extends Component {
                     </Col>
                 </Row>
                 <Row>
-                    <Col className="gif" size="md-6">
+                    <Col size ="md-6">
+                        <Modal>
+                            <Header>
+                                <h1>testing</h1>
+                            </Header>
+                            <modalBody>
+                                <h1>wow</h1>
+                                    
+                            </modalBody>
+                                   
+                        </Modal>
                     </Col>
                 </Row>
             </Container>

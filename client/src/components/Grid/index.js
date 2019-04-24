@@ -1,9 +1,11 @@
 import React from "react";
-import "./style.css";
 
+let backC ={
+    backgroundColor: 'white'
+}
 // Exporting the Container, Row, and Col components from this file
 export const Container = ({fluid, children}) => {
-    return <div className={`container${fluid ? "-fluid" : ""} `}>{children}</div>;
+    return <div className={`container${fluid ? "-fluid" : ""} `} style={backC}>{children}</div>;
 }
 
 // This Container component allows us to use a bootstrap container without worrying about class names
