@@ -38,6 +38,8 @@ export default class GameScene extends Phaser.Scene {
   fireball24;
   fireball25;
   scoreText;
+  FlameLayer;
+  flame;
   CoinLayer;
   coins;
   coinScore = 0;
@@ -85,6 +87,7 @@ export default class GameScene extends Phaser.Scene {
     // eslint-disable-next-line
     let propsLayer = map.createStaticLayer("PropsLayer", [props], 0, 0);
     this.CoinLayer = map.getObjectLayer('CoinLayer')['objects'];
+    
 
     // Coin object
     this.coins = this.physics.add.staticGroup()
@@ -95,6 +98,24 @@ export default class GameScene extends Phaser.Scene {
       obj.setOrigin(0);
       obj.body.width = object.width;
       obj.body.height = object.height;
+    });
+    this.FlameLayer = map.getObjectLayer('fire')['objects'];
+    this.anims.create({
+      key: 'fya',
+      frames: this.anims.generateFrameNumbers('flame', {
+        start: 0,
+        end: 5
+      }),
+      frameRate: 10,
+      repeat: -1
+    });
+    this.flames = this.physics.add.staticGroup()
+    this.FlameLayer.forEach(object1 => {
+      let flm = this.flames.create(object1.x, object1.y, "flame").play('fya');
+      flm.setScale(object1.width = 1, object1.height = 1);
+      flm.setOrigin(0);
+      flm.body.width = object1.width;
+      flm.body.height = object1.height;
     });
 
     // Adds player and sets her to collide with ground tiles
@@ -721,7 +742,7 @@ export default class GameScene extends Phaser.Scene {
     this.cameras.main.followOffset.set(0, 30);
     // this.cameras.main.startFollow(player, true, 2.0, 2.0);
     // this.cameras.main.setZoom(4);
-    this.cameras.main.setZoom(1.2);
+    this.cameras.main.setZoom(2.25);
   }
 
   update() {

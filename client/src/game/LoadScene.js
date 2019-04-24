@@ -17,6 +17,10 @@ export default class LoadScene extends Phaser.Scene {
         this.load.image("win-title", "assets/images/win-title.png");
         this.load.image("title", "assets/images/title.png");
         this.load.image("coin", "assets/images/coin.png");
+        this.load.spritesheet("flame", "assets/images/flame.png", {
+            frameWidth: 24,
+            frameHeight: 16
+        });
         this.load.image("tileset", "assets/images/tileset.png");
         this.load.image("underground", "assets/images/underground.png");
         this.load.image("underground-props", "assets/images/underground-props.png");
