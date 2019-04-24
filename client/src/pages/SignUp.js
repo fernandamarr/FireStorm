@@ -1,12 +1,11 @@
 import React, { Component } from "react";
-// import ReactDOM from 'react-dom';
-// import { Link } from "react-router-dom";
+
 import axios from 'axios';
 import { Col, Row, Container } from "../components/SignUpGrid";
 import Jumbotron from "../components/Jumbotron";
-// import API from "../utils/API";
+
 import { Input } from "../components/Input";
-// import SignUpBtn from "../components/SignUp";
+
 
 class SignUp extends Component {
 
@@ -40,9 +39,11 @@ class SignUp extends Component {
         return (
             <Container fluid>
                 <Row>
-                    <Col size="md-6">
+                    <Col size="md-3 sm-12">
+                    </Col>
+                    <Col size="md-6 sm-12">
                         <Jumbotron>
-                            <h1 className="heading-primary"> Sign-Up </h1>
+                            <h1 className="heading-primary text-white"> Sign-Up </h1>
                         </Jumbotron>
                         <form className="form-signin" onSubmit={this.onSubmit}>
                             <Input

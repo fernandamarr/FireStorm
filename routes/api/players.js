@@ -27,11 +27,11 @@ router.post('/game', passport.authenticate('jwt', {
 }), function (req, res) {
     var token = getToken(req.headers);
     if (token) {
-        Player.findOne({email: req.player.email},
-        function (err, players) {
-            if (err) return next(err);
-            res.json(players);
-        });
+        Player.findOne({ email: req.player.email },
+            function (err, players) {
+                if (err) return next(err);
+                res.json(players);
+            });
     } else {
         return res.status(403).send({
             success: false,
@@ -42,13 +42,20 @@ router.post('/game', passport.authenticate('jwt', {
 
 // Route for player sign up
 router.post('/signup', function (req, res) {
+
+
     if (!req.body.email || !req.body.password) {
         res.json({
             success: false,
             msg: 'Please enter email and password.'
         });
     } else {
+        let username = req.body.name;
+        if (username.length <= 0) {
+            username = "unknown warriors";
+        }
         let newPlayer = new Player({
+            name: username,
             email: req.body.email,
             password: req.body.password
         });
@@ -89,7 +96,8 @@ router.post('/login', function (req, res) {
                     // return the information including token as JSON
                     res.json({
                         success: true,
-                        token: 'JWT ' + token
+                        token: 'JWT ' + token,
+                        email: req.body.email
                     });
                 } else {
                     res.status(401).send({
@@ -100,6 +108,38 @@ router.post('/login', function (req, res) {
             });
         }
     });
+});
+
+// update routes for the player (courtesy of Thomas the great)
+uter.post('/update', function (req, res) {
+    console.log("UPDATE PLAYER ROUTE");
+    // console.log(req);
+    // console.log("did the user exist?");
+    Player.findOne({ email: req.body.email }, (err, doc) => {
+        console.log(doc.score);
+        if (req.body.theFinalScore > doc.score) {
+            Player.findOneAndUpdate({ email: req.body.email }, { $set: { score: req.body.theFinalScore } }, { new: true }, (err, doc) => {
+                if (err) {
+                    console.log("Something wrong when updating data!");
+                }
+                console.log(doc);
+            });
+        }
+    });
+});
+
+// leader board route, descending highest score (courtesy of Thomas the great)
+
+router.get('/leaderboard', function (req, res) {
+    console.log("LEADERBOARD PLAYER ROUTE")
+    //they aren't saving the name on account creation
+    Player.find({},['name','email','score'],{sort:{
+        score: -1 //Sort by Date Added DESC
+    }}, function(err, players) {
+        console.log(players);    
+        res.send(players);  
+      }).limit(10);
+
 });
 
 module.exports = router;

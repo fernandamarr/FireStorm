@@ -1,4 +1,5 @@
 import Phaser from 'phaser';
+import axios from "axios";
 
 export default class GameOver extends Phaser.Scene {
     constructor() {
@@ -41,6 +42,16 @@ export default class GameOver extends Phaser.Scene {
             }
         });
         finalScoreText.setOrigin(0.5, 0.5);
+
+        let theFinalScore = parseInt(this.finalScore);
+        let email = localStorage.getItem('myemail');
+        axios.post('/api/player/update', { email, theFinalScore})
+            .then((result) => {
+
+            }).catch((err) => {
+                console.log(err)
+            })
+        
 
         // Play button
         let restartBtn = this.add.image(this.game.renderer.width / 2, this.game.renderer.height / 2, "restartbtn");

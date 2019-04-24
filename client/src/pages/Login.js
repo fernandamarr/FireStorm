@@ -1,13 +1,8 @@
 import React, { Component } from "react";
-// import ReactDOM from 'react-dom';
 import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
-// import API from "../utils/API";
 import { Link } from "react-router-dom";
 import { Input } from "../components/Input";
-// import SignUpBtn from "../components/SignUp";
-
-import {Modal, Header, modalBody} from "../components/Modal";
 import axios from 'axios';
 
 
@@ -33,6 +28,7 @@ class Login extends Component {
     const { email, password } = this.state;
     axios.post('/api/player/login', { email, password })
         .then((result) => {
+        localStorage.setItem('myemail', result.data.token);
         localStorage.setItem('jwtToken', result.data.token);
         this.setState({ message: '' });
         this.props.history.push('/game');
@@ -45,12 +41,17 @@ class Login extends Component {
 
     render() {
         const { email, password, message } = this.state;
+        
+    
         return (
             <Container fluid>
                 <Row >
-                    <Col size="md-6 sm-6">
+                    <Col size="md-4 sm-12" >
+                        
+                    </Col>
+                    <Col size="md-4 sm-6">
                         <Jumbotron>
-                            <h1>Welcome! Please login to play!  </h1>
+                            <h1 className="text-white">Welcome! Please login to play!  </h1>
                         </Jumbotron>
                         <form className="form-signin" onSubmit={this.onSubmit}>
                         {message !== '' &&
@@ -83,20 +84,7 @@ class Login extends Component {
                         </form>
                     </Col>
                 </Row>
-                <Row>
-                    <Col size ="md-6">
-                        <Modal>
-                            <Header>
-                                <h1>testing</h1>
-                            </Header>
-                            <modalBody>
-                                <h1>wow</h1>
-                                    
-                            </modalBody>
-                                   
-                        </Modal>
-                    </Col>
-                </Row>
+                
             </Container>
         )
     }

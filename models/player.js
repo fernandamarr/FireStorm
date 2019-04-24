@@ -6,6 +6,7 @@ const playerSchema = new Schema ({
     name: {type: String, required: false},
     email: {type: String, required: true},
     password: {type: String, required: true},
+    score: {type: Number, required: false, default: 0},
     date: {type: Date, default: Date.now}
 });
 

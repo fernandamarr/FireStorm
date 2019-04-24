@@ -1,16 +1,26 @@
 import React from "react";
 
-let backC ={
-    backgroundColor: 'white'
+let aesthBack = {
+    backgroundImage: 'url(https://res.cloudinary.com/teepublic/image/private/s--tNAQHHJg--/t_Preview/b_rgb:040016,c_limit,f_jpg,h_630,q_90,w_630/v1533186521/production/designs/2968262_0.jpg',
+    backgroundPosition: 'top left',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'inherit',
+    height: '900px'
 }
+
+let colorAe = {
+    backgroundImage: 'linear-gradient(to bottom right, navy, white)'
+}
+
+
 // Exporting the Container, Row, and Col components from this file
-export const Container = ({fluid, children}) => {
-    return <div className={`container${fluid ? "-fluid" : ""} `} style={backC}>{children}</div>;
+export const Container = ({children}) => {
+    return <div className="container-fluid " style={colorAe}  >{children}</div>;
 }
 
 // This Container component allows us to use a bootstrap container without worrying about class names
-export const Row = ({fluid, children}) => {
-    return <div className= {`row${fluid ? "-fluid": ""}`}>{children}</div>;
+export const Row = ({children}) => {
+    return <div className= "row"style={aesthBack}  >{children}</div>;
 }
 
 
