@@ -42,8 +42,6 @@ router.post('/game', passport.authenticate('jwt', {
 
 // Route for player sign up
 router.post('/signup', function (req, res) {
-
-
     if (!req.body.email || !req.body.password) {
         res.json({
             success: false,
@@ -111,7 +109,7 @@ router.post('/login', function (req, res) {
 });
 
 // update routes for the player (courtesy of Thomas the great)
-uter.post('/update', function (req, res) {
+router.post('/update', function (req, res) {
     console.log("UPDATE PLAYER ROUTE");
     // console.log(req);
     // console.log("did the user exist?");
