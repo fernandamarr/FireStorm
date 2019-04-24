@@ -47,9 +47,10 @@ export default class GameScene extends Phaser.Scene {
   livesText;
   fb;
   invisible;
+  heart;
 
   create() {
-    // Add theme song and loop.
+    // Theme song and loop.
     this.music = this.sound.add("theme-song");
     this.music.setLoop(true);
     this.music.play();
@@ -65,7 +66,6 @@ export default class GameScene extends Phaser.Scene {
     let underground = map.addTilesetImage("underground", "underground");
     let undergroundProps = map.addTilesetImage("underground-props", "underground-props");
     let props = map.addTilesetImage("items", "items");
-
     let middle = map.addTilesetImage("middle", "middle");
     // let invisible = map.addTilesetImage("invisible", "invisible");
 
@@ -89,9 +89,9 @@ export default class GameScene extends Phaser.Scene {
     this.CoinLayer = map.getObjectLayer('CoinLayer')['objects'];
     
 
-    // Add coin object
+    // Coin object
     this.coins = this.physics.add.staticGroup()
-    // render our coin object with coin asset we loaded into our game in the preload function
+    // render our coin object with coin asset we loaded into our game in the load scene
     this.CoinLayer.forEach(object => {
       let obj = this.coins.create(object.x, object.y, "coin");
       obj.setScale(object.width / 16, object.height / 16);
@@ -143,6 +143,95 @@ export default class GameScene extends Phaser.Scene {
     // Collide with killer layers and fire killLayer function
     killerLayer.setCollisionByProperty({collide: true});
     this.physics.add.collider(this.player, killerLayer, this.killLayer, null, this);
+
+    // Heart
+    this.heart = this.physics.add.sprite(5180, 736, "heart");
+    this.heart.setCollideWorldBounds(true);
+    this.heart.setBounce(0.2);
+    this.physics.add.collider(this.heart, this.player, this.winGame, null, this);
+    this.physics.add.collider(this.heart, groundLayer);
+
+    // Sprite community
+    this.sprite1 = this.physics.add.sprite(5230,736, 'sprite1');
+    this.sprite1.displayWidth = 26;
+    this.sprite1.displayHeight = 40;
+    this.sprite1.setGravity(0, 200);
+    this.sprite1.setBounce(0.2);
+    this.sprite1.setCollideWorldBounds(true);
+    this.physics.add.collider(this.sprite1, groundLayer);
+    // sprite 2
+    this.sprite2 = this.physics.add.sprite(5260,736, 'sprite2');
+    this.sprite2.displayWidth = 26;
+    this.sprite2.displayHeight = 40;
+    this.sprite2.setGravity(0, 200);
+    this.sprite2.setBounce(0.2);
+    this.sprite2.setCollideWorldBounds(true);
+    this.physics.add.collider(this.sprite2, groundLayer);
+    // sprite 3
+    this.sprite3 = this.physics.add.sprite(5290,736, 'sprite3');
+    this.sprite3.displayWidth = 26;
+    this.sprite3.displayHeight = 40;
+    this.sprite3.setGravity(0, 200);
+    this.sprite3.setBounce(0.2);
+    this.sprite3.setCollideWorldBounds(true);
+    this.physics.add.collider(this.sprite3, groundLayer);
+    // sprite 4
+    this.sprite4 = this.physics.add.sprite(5320,736, 'sprite4');
+    this.sprite4.displayWidth = 26;
+    this.sprite4.displayHeight = 40;
+    this.sprite4.setGravity(0, 200);
+    this.sprite4.setBounce(0.2);
+    this.sprite4.setCollideWorldBounds(true);
+    this.physics.add.collider(this.sprite4, groundLayer);
+    // sprite 5
+    this.sprite5 = this.physics.add.sprite(5350,736, 'sprite5');
+    this.sprite5.displayWidth = 26;
+    this.sprite5.displayHeight = 40;
+    this.sprite5.setGravity(0, 200);
+    this.sprite5.setBounce(0.2);
+    this.sprite5.setCollideWorldBounds(true);
+    this.physics.add.collider(this.sprite5, groundLayer);
+    // sprite 6
+    this.sprite6 = this.physics.add.sprite(5380,736, 'sprite6');
+    this.sprite6.displayWidth = 26;
+    this.sprite6.displayHeight = 40;
+    this.sprite6.setGravity(0, 200);
+    this.sprite6.setBounce(0.2);
+    this.sprite6.setCollideWorldBounds(true);
+    this.physics.add.collider(this.sprite6, groundLayer);
+    // sprite 7
+    this.sprite7 = this.physics.add.sprite(5410,736, 'sprite7');
+    this.sprite7.displayWidth = 26;
+    this.sprite7.displayHeight = 40;
+    this.sprite7.setGravity(0, 200);
+    this.sprite7.setBounce(0.2);
+    this.sprite7.setCollideWorldBounds(true);
+    this.physics.add.collider(this.sprite7, groundLayer);
+    // sprite 8
+    this.sprite8 = this.physics.add.sprite(5440,736, 'sprite8');
+    this.sprite8.displayWidth = 26;
+    this.sprite8.displayHeight = 40;
+    this.sprite8.setGravity(0, 200);
+    this.sprite8.setBounce(0.2);
+    this.sprite8.setCollideWorldBounds(true);
+    this.physics.add.collider(this.sprite8, groundLayer);
+    // sprite 9
+    this.sprite9 = this.physics.add.sprite(5470,736, 'sprite9');
+    this.sprite9.displayWidth = 26;
+    this.sprite9.displayHeight = 40;
+    this.sprite9.setGravity(0, 200);
+    this.sprite9.setBounce(0.2);
+    this.sprite9.setCollideWorldBounds(true);
+    this.physics.add.collider(this.sprite9, groundLayer);
+    // sprite 10
+    this.sprite10 = this.physics.add.sprite(5500,736, 'sprite10');
+    this.sprite10.displayWidth = 26;
+    this.sprite10.displayHeight = 40;
+    this.sprite10.setGravity(0, 200);
+    this.sprite10.setBounce(0.2);
+    this.sprite10.setCollideWorldBounds(true);
+    this.physics.add.collider(this.sprite10, groundLayer);
+
 
     // Fireball frames
     this.anims.create({
@@ -415,6 +504,7 @@ export default class GameScene extends Phaser.Scene {
     this.fireball25.setVelocity(Phaser.Math.Between(-200, 200), 20);
     this.fireball25.displayWidth = 32;
     this.fireball25.displayHeight = 32;
+
     // Pit Flames
     this.fg1 = this.physics.add.sprite(888, 928, '1').play('fg');
     this.fg1.setCollideWorldBounds(true);
@@ -652,7 +742,7 @@ export default class GameScene extends Phaser.Scene {
     this.cameras.main.followOffset.set(0, 30);
     // this.cameras.main.startFollow(player, true, 2.0, 2.0);
     // this.cameras.main.setZoom(4);
-    this.cameras.main.setZoom(2.25);
+    this.cameras.main.setZoom(1.2);
   }
 
   update() {
@@ -723,6 +813,22 @@ export default class GameScene extends Phaser.Scene {
       this.cameras.main.fade(1000);
       this.scene.stop();
       this.scene.start("GameOver", {
+        score: this.coinScore
+      });
+    }, [], this);
+  }
+
+  winGame(player, hearts) {
+    this.heart.destroy();
+    this.coinScore = this.coinScore + 20;
+    this.scoreText.setText(`Score: ${this.coinScore}`); // set the text to show the current lives
+    this.physics.pause();
+    this.music.stop();
+    this.sound.play("win-sound");
+    this.time.delayedCall(4000, function () {
+      this.cameras.main.fade(1000);
+      this.scene.stop();
+      this.scene.start("WinScene", {
         score: this.coinScore
       });
     }, [], this);
