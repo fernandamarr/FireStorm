@@ -14,11 +14,11 @@ export default class LoadScene extends Phaser.Scene {
         this.load.image("restartbtn", "assets/images/play-again-btn.png");
         this.load.image("logout-btn", "assets/images/logout-btn.png");
         this.load.image("gameover-title", "assets/images/game-over.png");
+        this.load.image("win-title", "assets/images/win-title.png");
         this.load.image("title", "assets/images/title.png");
         this.load.image("coin", "assets/images/coin.png");
         this.load.image("tileset", "assets/images/tileset.png");
         this.load.image("underground", "assets/images/underground.png");
-       
         this.load.image("underground-props", "assets/images/underground-props.png");
         this.load.image("items", "assets/images/props.png");
         this.load.image("middle", "assets/images/background.png");
@@ -32,10 +32,18 @@ export default class LoadScene extends Phaser.Scene {
         this.load.image('3', '/assets/images/3.png');
         this.load.image('4', '/assets/images/4.png');
         this.load.image('5', '/assets/images/5.png');
-        this.load.spritesheet("sprite", "assets/images/spritesheet2.png", {
-            frameWidth: 32,
-            frameHeight: 60
-        });
+        this.load.image("heart", "assets/images/heart.png");
+        this.load.image("sprite1", "assets/images/sprite1.png");
+        this.load.image("sprite2", "assets/images/sprite2.png");
+        this.load.image("sprite3", "assets/images/sprite3.png");
+        this.load.image("sprite4", "assets/images/sprite4.png");
+        this.load.image("sprite5", "assets/images/sprite5.png");
+        this.load.image("sprite6", "assets/images/sprite6.png");
+        this.load.image("sprite7", "assets/images/sprite7.png");
+        this.load.image("sprite8", "assets/images/sprite8.png");
+        this.load.image("sprite9", "assets/images/sprite9.png");
+        this.load.image("sprite10", "assets/images/sprite10.png");
+        this.load.spritesheet("sprite", "assets/images/spritesheet2.png", {frameWidth: 32, frameHeight: 60});
         this.load.tilemapTiledJSON("map", "assets/trackrmap2.json");
         this.load.audio("theme-song", "assets/audio/theme-song2.mp3");
         this.load.audio("start-page-theme-song", "assets/audio/start-theme-song.mp3");
@@ -43,6 +51,7 @@ export default class LoadScene extends Phaser.Scene {
         this.load.audio("jump-sound", "assets/audio/jump-sound.mp3");
         this.load.audio("coin-sound", "assets/audio/coin-sound.mp3");
         this.load.audio("dead-sound", "assets/audio/dead-sound.mp3");
+        this.load.audio("win-sound", "assets/audio/win-sound.mp3");
 
         // Loading bar
         let loadingBar = this.add.graphics({

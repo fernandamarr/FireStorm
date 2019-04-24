@@ -4,6 +4,7 @@ import LoadScene from "./LoadScene";
 import MenuScene from "./MenuScene";
 import GameScene from "./GameScene";
 import GameOver from "./GameOver";
+import WinScene from "./WinScene";
 import axios from "axios";
 import "./styles.css";
 
@@ -25,7 +26,6 @@ export default class App extends Component {
       .then(res => {
         this.setState({ isGameStarted: true });
         this.startGame();
-        console.log(this.state);
       })
       .catch((error) => {
         if(error.response.status === 401) {
@@ -53,7 +53,7 @@ export default class App extends Component {
           }
         }
       },
-      scene: [LoadScene, MenuScene, GameOver, GameScene],
+      scene: [LoadScene, MenuScene, GameOver, WinScene, GameScene],
       parent: document.querySelector("#phaser-game")
     };
 
