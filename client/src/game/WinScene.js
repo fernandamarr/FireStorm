@@ -43,7 +43,7 @@ export default class WinScene extends Phaser.Scene {
         finalScoreText.setOrigin(0.5, 0.5);
 
         // Play button
-        let restartBtn = this.add.image(this.game.renderer.width / 2, this.game.renderer.height / 2, "restartbtn");
+        // let restartBtn = this.add.image(this.game.renderer.width / 2, this.game.renderer.height / 2, "restartbtn");
         let logoutBtn = this.add.image(this.game.renderer.width / 2, this.game.renderer.height / 2 + 80, "logout-btn")
 
         // Sprite
@@ -52,22 +52,22 @@ export default class WinScene extends Phaser.Scene {
         hoverSprite.setVisible(false);
 
         // Set button interaction on hover and click (show sprite on hover)
-        restartBtn.setInteractive();
-        logoutBtn.setInteractive();
+        // restartBtn.setInteractive();
+        // logoutBtn.setInteractive();
 
-        restartBtn.on("pointerover", () => {
-            hoverSprite.setVisible(true);
-            hoverSprite.x = restartBtn.x - restartBtn.width;
-            hoverSprite.y = restartBtn.y;
-        })
-        restartBtn.on("pointerout", () => {
-            hoverSprite.setVisible(false);
-        })
-        restartBtn.on("pointerup", () => {
-            this.endTheme.stop();
-            let startScene = this.scene.get("GameScene");
-            startScene.scene.start();
-        })
+        // restartBtn.on("pointerover", () => {
+        //     hoverSprite.setVisible(true);
+        //     hoverSprite.x = restartBtn.x - restartBtn.width;
+        //     hoverSprite.y = restartBtn.y;
+        // })
+        // restartBtn.on("pointerout", () => {
+        //     hoverSprite.setVisible(false);
+        // })
+        // restartBtn.on("pointerup", () => {
+        //     this.endTheme.stop();
+        //     let startScene = this.scene.get("GameScene");
+        //     startScene.scene.start();
+        // })
         logoutBtn.on("pointerup", () => {
             this.endTheme.stop();
             localStorage.removeItem('jwtToken');

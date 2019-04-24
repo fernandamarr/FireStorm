@@ -767,18 +767,18 @@ export default class GameScene extends Phaser.Scene {
     } else if (this.lives === 1) {
       player.setTint(0xff7f7f)
     } else {
-      // this.physics.pause();
+      this.physics.pause();
       player.setTint(0xff0000);
       this.cameras.main.shake(400);
       this.music.stop();
       this.sound.play("dead-sound");
-      // this.time.delayedCall(4000, function () {
-      //   this.cameras.main.fade(1000);
-      //   this.scene.stop();
-      //   this.scene.start("GameOver", {
-      //     score: this.coinScore
-      //   });
-      // }, [], this);
+      this.time.delayedCall(4000, function () {
+        this.cameras.main.fade(1000);
+        this.scene.stop();
+        this.scene.start("GameOver", {
+          score: this.coinScore
+        });
+      }, [], this);
     }
   }
 
