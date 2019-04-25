@@ -1,4 +1,5 @@
-import Phaser from 'phaser';
+import Phaser from "phaser";
+import axios from "axios"
 
 export default class WinScene extends Phaser.Scene {
     constructor() {
@@ -42,6 +43,15 @@ export default class WinScene extends Phaser.Scene {
         });
         finalScoreText.setOrigin(0.5, 0.5);
 
+        let theFinalScore = parseInt(this.finalScore);
+        let email = localStorage.getItem('myemail');
+        axios.post('/api/player/update', { email, theFinalScore})
+            .then((result) => {
+
+            }).catch((err) => {
+                console.log(err)
+            })
+
         // Play button
         let leaderBtn = this.add.image(this.game.renderer.width / 2, this.game.renderer.height / 2, "leaderboard-btn")
 
@@ -49,6 +59,8 @@ export default class WinScene extends Phaser.Scene {
         let hoverSprite = this.add.sprite(100, 100, "small-sprite");
         hoverSprite.setScale(2.5);
         hoverSprite.setVisible(false);
+
+        leaderBtn.setInteractive()
 
         leaderBtn.on("pointerup", () => {
             this.endTheme.stop();

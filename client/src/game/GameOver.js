@@ -52,7 +52,6 @@ export default class GameOver extends Phaser.Scene {
                 console.log(err)
             })
         
-
         // Play button
         let restartBtn = this.add.image(this.game.renderer.width / 2, this.game.renderer.height / 2, "restartbtn");
         let leaderBtn = this.add.image(this.game.renderer.width / 2, this.game.renderer.height / 2 + 80, "leaderboard-btn")
@@ -81,7 +80,8 @@ export default class GameOver extends Phaser.Scene {
         })
         leaderBtn.on("pointerup", () => {
             this.endTheme.stop();
-            localStorage.removeItem('jwtToken');
+            // localStorage.removeItem('jwtToken');
+            // localStorage.removeItem('myemail');
             window.location.replace("/leaderboard");
         })
     }
