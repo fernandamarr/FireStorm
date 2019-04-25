@@ -1,12 +1,11 @@
 import React, { Component } from "react";
-// import ReactDOM from 'react-dom';
-// import { Link } from "react-router-dom";
+
 import axios from 'axios';
 import { Col, Row, Container } from "../components/SignUpGrid";
 import Jumbotron from "../components/Jumbotron";
-// import API from "../utils/API";
+
 import { Input } from "../components/Input";
-// import SignUpBtn from "../components/SignUp";
+
 
 class SignUp extends Component {
 
@@ -31,7 +30,7 @@ class SignUp extends Component {
     axios.post('/api/player/signup', { name, email, password })
         .then((result) => {
             this.props.history.push("/login"); 
-            alert("You are signed up!")          
+            alert("You are signed up!");          
         }).catch(error => console.log(error));
     }
 
@@ -40,9 +39,11 @@ class SignUp extends Component {
         return (
             <Container fluid>
                 <Row>
-                    <Col size="md-6">
+                    <Col size="md-4 sm-12">
+                    </Col>
+                    <Col size="md-4 sm-12">
                         <Jumbotron>
-                            <h1 className="heading-primary"> Sign-Up </h1>
+                            <h1 className="heading-primary text-white"> Sign-Up </h1>
                         </Jumbotron>
                         <form className="form-signin" onSubmit={this.onSubmit}>
                             <Input
@@ -67,7 +68,7 @@ class SignUp extends Component {
                             />
                             
                            
-                            <button className="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+                            <button className="btn btn-lg btn-outline-light btn-block" type="submit">Register</button>
                        
                         </form>
                     </Col>
