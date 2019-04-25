@@ -14,7 +14,7 @@ class Leaderboard extends Component {
         axios.get("/api/player/leaderboard").then(
             res => {
                 this.setState({ leaderboard: res.data }, () => {
-                    console.log(this.state.leaderboard);
+                    // console.log(this.state.leaderboard);
                     var HTMLCustom = 
                     <div id="testing" style={{"color" : "white"}}>
                         <h1 style={{"textAlign" : "center"}}>Leaderboard</h1>

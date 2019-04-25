@@ -75,7 +75,7 @@ router.post('/signup', function (req, res) {
 
 // Route for player login
 router.post('/login', function (req, res) {
-    console.log("LOG IN PLAYER ROUTE")
+    // console.log("LOG IN PLAYER ROUTE")
     Player.findOne({
         email: req.body.email
     }, function (err, player) {
@@ -110,9 +110,7 @@ router.post('/login', function (req, res) {
 
 // update routes for the player (courtesy of Thomas the great)
 router.post('/update', function (req, res) {
-    console.log("UPDATE PLAYER ROUTE");
-    // console.log(req);
-    // console.log("did the user exist?");
+    // console.log("UPDATE PLAYER ROUTE");
     Player.findOne({ email: req.body.email }, (err, doc) => {
         console.log(doc.score);
         if (req.body.theFinalScore > doc.score) {
@@ -120,21 +118,19 @@ router.post('/update', function (req, res) {
                 if (err) {
                     console.log("Something wrong when updating data!");
                 }
-                console.log(doc);
+                // console.log(doc);
             });
         }
     });
 });
 
 // leader board route, descending highest score (courtesy of Thomas the great)
-
 router.get('/leaderboard', function (req, res) {
-    console.log("LEADERBOARD PLAYER ROUTE")
-    //they aren't saving the name on account creation
+    // console.log("LEADERBOARD PLAYER ROUTE")
     Player.find({},['name','email','score'],{sort:{
         score: -1 //Sort by Date Added DESC
     }}, function(err, players) {
-        console.log(players);    
+        // console.log(players);    
         res.send(players);  
       }).limit(10);
 
