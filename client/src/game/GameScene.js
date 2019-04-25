@@ -112,7 +112,7 @@ export default class GameScene extends Phaser.Scene {
     this.flames = this.physics.add.staticGroup()
     this.FlameLayer.forEach(object1 => {
       let flm = this.flames.create(object1.x, object1.y, "flame").play('fya');
-      flm.setScale(object1.width = 1, object1.height = 1);
+      flm.setScale(object1.width = 1, object1.height = 1.5);
       flm.setOrigin(0);
       flm.body.width = object1.width;
       flm.body.height = object1.height;
