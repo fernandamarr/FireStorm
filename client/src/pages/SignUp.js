@@ -50,7 +50,7 @@ class SignUp extends Component {
                                 value={name}
                                 onChange={this.onChange}
                                 name="name"
-                                placeholder="Enter Your Name"
+                                placeholder="Username (required)"
                             />
                             <Input
                                 value={email}
