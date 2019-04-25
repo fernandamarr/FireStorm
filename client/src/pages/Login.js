@@ -43,8 +43,7 @@ class Login extends Component {
 
     render() {
         const { email, password, message } = this.state;
-
-       
+        
         return (
             <Container fluid>
                 <Row >
@@ -53,7 +52,7 @@ class Login extends Component {
                     <Col size="md-6 sm-6 " >
                     
                         <Jumbotron>
-                            <h1 className=" text-white "> Please login to play!  </h1>
+                            <h1 className="m-5 text-white " > Please login to play!  </h1>
                         </Jumbotron>
                         <form className=" p-5 m-5 form-signin" onSubmit={this.onSubmit}>
                             {message !== '' &&

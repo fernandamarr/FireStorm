@@ -3,6 +3,13 @@ let aesthetic = {
     backgroundImage: 'linear-gradient(to bottom right, red, yellow)',
     height: '900px'
 }
+
+let warriorImg = {
+    backgroundImage: 'url(https://art.ngfiles.com/images/695000/695547_michafrario_super-pocket-fighter-nova.gif?f1543967599)',
+    backgroundPosition: 'bottom right',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'initial'
+}
 // Exporting the Container, Row, and Col components from this file
 export const Container = ({children })=> {
     return <div className="container-fluid"style={aesthetic} >{children}</div>;
@@ -10,7 +17,7 @@ export const Container = ({children })=> {
 
 // This Container component allows us to use a bootstrap container without worrying about class names
 export const Row = ({ children }) => {
-    return <div className="row">{children}</div>;
+    return <div className="row" style={warriorImg}>{children} </div>;
 }
 
 
