@@ -55,7 +55,7 @@ export default class GameOver extends Phaser.Scene {
 
         // Play button
         let restartBtn = this.add.image(this.game.renderer.width / 2, this.game.renderer.height / 2, "restartbtn");
-        let logoutBtn = this.add.image(this.game.renderer.width / 2, this.game.renderer.height / 2 + 80, "logout-btn")
+        let leaderBtn = this.add.image(this.game.renderer.width / 2, this.game.renderer.height / 2 + 80, "leaderboard-btn")
 
         // Sprite
         let hoverSprite = this.add.sprite(100, 100, "small-sprite");
@@ -64,7 +64,7 @@ export default class GameOver extends Phaser.Scene {
 
         // Set button interaction on hover and click (show sprite on hover)
         restartBtn.setInteractive();
-        logoutBtn.setInteractive();
+        leaderBtn.setInteractive();
 
         restartBtn.on("pointerover", () => {
             hoverSprite.setVisible(true);
@@ -79,10 +79,10 @@ export default class GameOver extends Phaser.Scene {
             let startScene = this.scene.get("GameScene");
             startScene.scene.start();
         })
-        logoutBtn.on("pointerup", () => {
+        leaderBtn.on("pointerup", () => {
             this.endTheme.stop();
             localStorage.removeItem('jwtToken');
-            window.location.replace("/login");
+            window.location.replace("/leaderboard");
         })
     }
 }
