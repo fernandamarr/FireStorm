@@ -5,6 +5,7 @@ import SignUp from "./pages/SignUp";
 import Game from './game';
 import NoMatch from "./pages/NoMatch";
 import Leaderboard from "./pages/Leaderboard";
+// import DevTeam from "./pages/DevTeam";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route exact path="/game" component={Game} />
           <Route exact path="/signup" component={SignUp} />
           <Route exact path="/leaderboard" component={Leaderboard}/>
+          {/* <Route exact path="/devteam" component={DevTeam}/> */}
           <Route component={NoMatch} />
         </Switch >
       </div>

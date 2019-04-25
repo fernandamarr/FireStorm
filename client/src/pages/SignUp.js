@@ -39,9 +39,9 @@ class SignUp extends Component {
         return (
             <Container fluid>
                 <Row>
-                    <Col size="md-3 sm-12">
+                    <Col size="md-4 sm-12">
                     </Col>
-                    <Col size="md-6 sm-12">
+                    <Col size="md-4 sm-12">
                         <Jumbotron>
                             <h1 className="heading-primary text-white"> Sign-Up </h1>
                         </Jumbotron>
@@ -68,7 +68,7 @@ class SignUp extends Component {
                             />
                             
                            
-                            <button className="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+                            <button className="btn btn-lg btn-outline-light btn-block" type="submit">Register</button>
                        
                         </form>
                     </Col>

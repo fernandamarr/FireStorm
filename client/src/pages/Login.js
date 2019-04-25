@@ -44,18 +44,18 @@ class Login extends Component {
     render() {
         const { email, password, message } = this.state;
 
-
+       
         return (
             <Container fluid>
                 <Row >
-                    <Col size="md-4 sm-12" >
-
+                    <Col size="md-3 sm-12" >
                     </Col>
-                    <Col size="md-4 sm-6">
+                    <Col size="md-6 sm-6 " >
+                    
                         <Jumbotron>
-                            <h1 className="text-white">Welcome! Please login to play!  </h1>
+                            <h1 className=" text-white "> Please login to play!  </h1>
                         </Jumbotron>
-                        <form className="form-signin" onSubmit={this.onSubmit}>
+                        <form className=" p-5 m-5 form-signin" onSubmit={this.onSubmit}>
                             {message !== '' &&
                                 <div className="alert alert-warning alert-dismissible" role="alert">
                                     {message}
@@ -85,6 +85,7 @@ class Login extends Component {
                             </p>
                         </form>
                     </Col>
+                  
                 </Row>
 
             </Container>
