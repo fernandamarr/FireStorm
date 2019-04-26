@@ -2,6 +2,16 @@
     padding: 10px;
     font-weight: 600;
     color: #ffffff;
-    border-bottom: 5px solid rgb(151, 1, 193);
+    text-decoration: none;
+    border-bottom: 5px solid #f02cd6;
     background: rgb(0, 0, 0);
+}
+
+#dev-nav {
+    color: #ffffff;
+}
+
+
+#dev-nav:hover {
+    color: #f02cd6;
 }
