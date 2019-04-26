@@ -1,28 +1,28 @@
-body{
-  background-color: #000000;
-}
+/* login background */
 #loginContain{
   background-image: url("/assets/login/control.jpg");
   background-repeat: repeat;
 }
 
-
+/* FireStorm game */
 #phaser-game {
   text-align: center;
   border: 3px solid #ffa500;
   margin: 0;
 }
 
-#hereButtn{
+/* Login button change color */
+
+#loginButtn{
   font-size: 23px;
 }
 
-#hereButtn:hover{
+#loginButtn:hover{
   background-color: #FF00CC;
   
 }
 
-
+/* title of table */
 
 th {
   text-decoration: underline;
@@ -166,7 +166,6 @@ h3{
   background-color: #0ab824;
 }
 
-=======
 
 /* ------- SCOREBOARD BUTTONS------- */
 

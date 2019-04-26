@@ -78,7 +78,7 @@ class Login extends Component {
                             />
 
                             {/* <FormBtn>Log In To Play!</FormBtn> */}
-                            <button id="hereButtn" className="btn btn-lg btn-outline-primary btn-block" type="submit">Login</button>
+                            <button id="loginButtn" className="btn btn-lg btn-outline-primary btn-block" type="submit">Login</button>
                             <span className="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
                             <p id="otherText" className="text-white">
 
