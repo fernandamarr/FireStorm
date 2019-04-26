@@ -80,7 +80,7 @@ class Login extends Component {
                             <button id="hereButtn" className="btn btn-lg btn-outline-primary btn-block" type="submit">Login</button>
                             <span className="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
                             <p id="otherText" className="text-white">
-                                Not a member? <Link to="/signup"><a href="/signup" id="regLink" className="btn btn-link" style={{'marginLeft': '10px'}}></a> Register here</Link>
+                                Not a member? <Link to="/signup" id="regLink" className="btn btn-link" style={{'marginLeft': '10px'}}> Register here</Link>
                             </p>
                         </form>
                     </Col>
