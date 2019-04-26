@@ -1,5 +1,8 @@
-body {
-  background-color: black;
+body,html {
+ background-image: url('https://res.cloudinary.com/teepublic/image/private/s--tNAQHHJg--/t_Preview/b_rgb:040016,c_limit,f_jpg,h_630,q_90,w_630/v1533186521/production/designs/2968262_0.jpg');
+ background-repeat: repeat-x;
+ background-size: contain;
+ 
 }
 
 
