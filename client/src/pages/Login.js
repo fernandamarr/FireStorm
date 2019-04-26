@@ -52,7 +52,7 @@ class Login extends Component {
                     <Col size="md-6 sm-6 " >
                     
                         <Jumbotron>
-                            <h1 className="m-5 text-white " > Please login to play!  </h1>
+                            <h1 id="loginText" className="m-5 display-1 text-white" > LOGIN  </h1>
                         </Jumbotron>
                         <form className=" p-5 m-5 form-signin" onSubmit={this.onSubmit}>
                             {message !== '' &&
@@ -77,10 +77,10 @@ class Login extends Component {
                             />
 
                             {/* <FormBtn>Log In To Play!</FormBtn> */}
-                            <button className="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+                            <button id="hereButtn" className="btn btn-lg btn-outline-primary btn-block" type="submit">Login</button>
                             <span className="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
-                            <p className="text-white">
-                                Not a member? <Link to="/signup"><span className="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Register here</Link>
+                            <p id="otherText" className="text-white">
+                                Not a member? <Link to="/signup"><a href="/signup" id="regLink" className="btn btn-link" style={{'marginLeft': '10px'}}></a> Register here</Link>
                             </p>
                         </form>
                     </Col>

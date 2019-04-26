@@ -1,6 +1,6 @@
 import React from "react";
 let aesthetic = {
-    backgroundImage: 'linear-gradient(to bottom right, red, yellow)',
+    backgroundImage: 'linear-gradient(to top left, rgb(66, 223, 244), rgb(9, 36, 237), rgb(129, 1, 193), rgb(151, 1, 193), rgb(193, 1, 186))',
     height: '900px'
 }
 

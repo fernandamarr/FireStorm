@@ -3,7 +3,7 @@ import React from "react";
 export function Input(props) {
     return (
         <div className="form-group">
-            <input className="form-control" {...props} />
+            <input className="form-control" style={{"height": "50px"}} {...props} />
         </div>
     );
 }
