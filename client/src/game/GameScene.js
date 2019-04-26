@@ -280,7 +280,7 @@ export default class GameScene extends Phaser.Scene {
       repeat: -1
     });
     // Fireball 1
-    this.fireball = this.physics.add.sprite(500, 250, 'fb1').play('fb');
+    this.fireball = this.physics.add.sprite(500, 550, 'fb1').play('fb');
     this.physics.add.collider(this.fireball, groundLayer);
     this.physics.add.collider(this.fireball, invisibleWall);
     this.fireball.setBounce(1);
@@ -289,7 +289,7 @@ export default class GameScene extends Phaser.Scene {
     this.fireball.displayWidth = 32;
     this.fireball.displayHeight = 32;
     // Fireball 2
-    this.fireball2 = this.physics.add.sprite(800, 250, 'fb1').play('fb');
+    this.fireball2 = this.physics.add.sprite(800, 550, 'fb1').play('fb');
     this.physics.add.collider(this.fireball2, groundLayer);
     this.physics.add.collider(this.fireball2, invisibleWall);
     this.fireball2.setBounce(1);
@@ -298,7 +298,7 @@ export default class GameScene extends Phaser.Scene {
     this.fireball2.displayWidth = 32;
     this.fireball2.displayHeight = 32;
     // Fireball 3
-    this.fireball3 = this.physics.add.sprite(1000, 250, 'fb1').play('fb');
+    this.fireball3 = this.physics.add.sprite(1000, 550, 'fb1').play('fb');
     this.physics.add.collider(this.fireball3, groundLayer);
     this.physics.add.collider(this.fireball3, invisibleWall);
     this.fireball3.setBounce(1);
@@ -307,7 +307,7 @@ export default class GameScene extends Phaser.Scene {
     this.fireball3.displayWidth = 32;
     this.fireball3.displayHeight = 32;
     // Fireball 4
-    this.fireball4 = this.physics.add.sprite(1200, 250, 'fb1').play('fb');
+    this.fireball4 = this.physics.add.sprite(1200, 550, 'fb1').play('fb');
     this.physics.add.collider(this.fireball4, groundLayer);
     this.physics.add.collider(this.fireball4, invisibleWall);
     this.fireball4.setBounce(1);
@@ -316,7 +316,7 @@ export default class GameScene extends Phaser.Scene {
     this.fireball4.displayWidth = 32;
     this.fireball4.displayHeight = 32;
     // Fireball 5
-    this.fireball5 = this.physics.add.sprite(1400, 250, 'fb1').play('fb');
+    this.fireball5 = this.physics.add.sprite(1400, 550, 'fb1').play('fb');
     this.physics.add.collider(this.fireball5, groundLayer);
     this.physics.add.collider(this.fireball5, invisibleWall);
     this.fireball5.setBounce(1);
@@ -325,7 +325,7 @@ export default class GameScene extends Phaser.Scene {
     this.fireball5.displayWidth = 32;
     this.fireball5.displayHeight = 32;
     // Fireball 6
-    this.fireball6 = this.physics.add.sprite(1600, 250, 'fb1').play('fb');
+    this.fireball6 = this.physics.add.sprite(1600, 550, 'fb1').play('fb');
     this.physics.add.collider(this.fireball6, groundLayer);
     this.physics.add.collider(this.fireball6, invisibleWall);
     this.fireball6.setBounce(1);
@@ -334,7 +334,7 @@ export default class GameScene extends Phaser.Scene {
     this.fireball6.displayWidth = 32;
     this.fireball6.displayHeight = 32;
     // Fireball 7
-    this.fireball7 = this.physics.add.sprite(1800, 250, 'fb1').play('fb');
+    this.fireball7 = this.physics.add.sprite(1800, 550, 'fb1').play('fb');
     this.physics.add.collider(this.fireball7, groundLayer);
     this.physics.add.collider(this.fireball7, invisibleWall);
     this.fireball7.setBounce(1);
@@ -343,7 +343,7 @@ export default class GameScene extends Phaser.Scene {
     this.fireball7.displayWidth = 32;
     this.fireball7.displayHeight = 32;
     // Fireball 8
-    this.fireball8 = this.physics.add.sprite(2000, 250, 'fb1').play('fb');
+    this.fireball8 = this.physics.add.sprite(2000, 550, 'fb1').play('fb');
     this.physics.add.collider(this.fireball8, groundLayer);
     this.physics.add.collider(this.fireball8, invisibleWall);
     this.fireball8.setBounce(1);
@@ -352,7 +352,7 @@ export default class GameScene extends Phaser.Scene {
     this.fireball8.displayWidth = 32;
     this.fireball8.displayHeight = 32;
     // Fireball 9
-    this.fireball9 = this.physics.add.sprite(2200, 250, 'fb1').play('fb');
+    this.fireball9 = this.physics.add.sprite(2200, 550, 'fb1').play('fb');
     this.physics.add.collider(this.fireball9, groundLayer);
     this.physics.add.collider(this.fireball9, invisibleWall);
     this.fireball9.setBounce(1);
@@ -361,7 +361,7 @@ export default class GameScene extends Phaser.Scene {
     this.fireball9.displayWidth = 32;
     this.fireball9.displayHeight = 32;
     // Fireball 10
-    this.fireball10 = this.physics.add.sprite(2400, 250, 'fb1').play('fb');
+    this.fireball10 = this.physics.add.sprite(2400, 550, 'fb1').play('fb');
     this.physics.add.collider(this.fireball10, groundLayer);
     this.physics.add.collider(this.fireball10, invisibleWall);
     this.fireball10.setBounce(1);
@@ -370,7 +370,7 @@ export default class GameScene extends Phaser.Scene {
     this.fireball10.displayWidth = 32;
     this.fireball10.displayHeight = 32;
     // Fireball 11
-    this.fireball11 = this.physics.add.sprite(2600, 250, 'fb1').play('fb');
+    this.fireball11 = this.physics.add.sprite(2600, 550, 'fb1').play('fb');
     this.physics.add.collider(this.fireball11, groundLayer);
     this.physics.add.collider(this.fireball11, invisibleWall);
     this.fireball11.setBounce(1);
@@ -379,7 +379,7 @@ export default class GameScene extends Phaser.Scene {
     this.fireball11.displayWidth = 32;
     this.fireball11.displayHeight = 32;
     // Fireball 12
-    this.fireball12 = this.physics.add.sprite(2800, 250, 'fb1').play('fb');
+    this.fireball12 = this.physics.add.sprite(2800, 550, 'fb1').play('fb');
     this.physics.add.collider(this.fireball12, groundLayer);
     this.physics.add.collider(this.fireball12, invisibleWall);
     this.fireball12.setBounce(1);
@@ -388,7 +388,7 @@ export default class GameScene extends Phaser.Scene {
     this.fireball12.displayWidth = 32;
     this.fireball12.displayHeight = 32;
     // Fireball 13
-    this.fireball13 = this.physics.add.sprite(3000, 250, 'fb1').play('fb');
+    this.fireball13 = this.physics.add.sprite(3000, 550, 'fb1').play('fb');
     this.physics.add.collider(this.fireball13, groundLayer);
     this.physics.add.collider(this.fireball13, invisibleWall);
     this.fireball13.setBounce(1);
@@ -397,7 +397,7 @@ export default class GameScene extends Phaser.Scene {
     this.fireball13.displayWidth = 32;
     this.fireball13.displayHeight = 32;
     // Fireball 14
-    this.fireball14 = this.physics.add.sprite(3200, 250, 'fb1').play('fb');
+    this.fireball14 = this.physics.add.sprite(3200, 550, 'fb1').play('fb');
     this.physics.add.collider(this.fireball14, groundLayer);
     this.physics.add.collider(this.fireball14, invisibleWall);
     this.fireball14.setBounce(1);
@@ -406,7 +406,7 @@ export default class GameScene extends Phaser.Scene {
     this.fireball14.displayWidth = 32;
     this.fireball14.displayHeight = 32;
     // Fireball 15
-    this.fireball15 = this.physics.add.sprite(3400, 250, 'fb1').play('fb');
+    this.fireball15 = this.physics.add.sprite(3400, 550, 'fb1').play('fb');
     this.physics.add.collider(this.fireball15, groundLayer);
     this.physics.add.collider(this.fireball15, invisibleWall);
     this.fireball15.setBounce(1);
@@ -415,7 +415,7 @@ export default class GameScene extends Phaser.Scene {
     this.fireball15.displayWidth = 32;
     this.fireball15.displayHeight = 32;
     // Fireball 16
-    this.fireball16 = this.physics.add.sprite(3600, 250, 'fb1').play('fb');
+    this.fireball16 = this.physics.add.sprite(3600, 550, 'fb1').play('fb');
     this.physics.add.collider(this.fireball16, groundLayer);
     this.physics.add.collider(this.fireball16, invisibleWall);
     this.fireball16.setBounce(1);
@@ -424,7 +424,7 @@ export default class GameScene extends Phaser.Scene {
     this.fireball16.displayWidth = 32;
     this.fireball16.displayHeight = 32;
     // Fireball 17
-    this.fireball17 = this.physics.add.sprite(3800, 250, 'fb1').play('fb');
+    this.fireball17 = this.physics.add.sprite(3800, 550, 'fb1').play('fb');
     this.physics.add.collider(this.fireball17, groundLayer);
     this.physics.add.collider(this.fireball17, invisibleWall);
     this.fireball17.setBounce(1);
@@ -433,7 +433,7 @@ export default class GameScene extends Phaser.Scene {
     this.fireball17.displayWidth = 32;
     this.fireball17.displayHeight = 32;
     // Fireball 18
-    this.fireball18 = this.physics.add.sprite(4000, 250, 'fb1').play('fb');
+    this.fireball18 = this.physics.add.sprite(4000, 550, 'fb1').play('fb');
     this.physics.add.collider(this.fireball18, groundLayer);
     this.physics.add.collider(this.fireball18, invisibleWall);
     this.fireball18.setBounce(1);
@@ -442,7 +442,7 @@ export default class GameScene extends Phaser.Scene {
     this.fireball18.displayWidth = 32;
     this.fireball18.displayHeight = 32;
     // Fireball 19
-    this.fireball19 = this.physics.add.sprite(4200, 250, 'fb1').play('fb');
+    this.fireball19 = this.physics.add.sprite(4200, 550, 'fb1').play('fb');
     this.physics.add.collider(this.fireball19, groundLayer);
     this.physics.add.collider(this.fireball19, invisibleWall);
     this.fireball19.setBounce(1);
@@ -451,7 +451,7 @@ export default class GameScene extends Phaser.Scene {
     this.fireball19.displayWidth = 32;
     this.fireball19.displayHeight = 32;
     // Fireball 20
-    this.fireball20 = this.physics.add.sprite(4400, 250, 'fb1').play('fb');
+    this.fireball20 = this.physics.add.sprite(4400, 550, 'fb1').play('fb');
     this.physics.add.collider(this.fireball20, groundLayer);
     this.physics.add.collider(this.fireball20, invisibleWall);
     this.fireball20.setBounce(1);
@@ -460,7 +460,7 @@ export default class GameScene extends Phaser.Scene {
     this.fireball20.displayWidth = 32;
     this.fireball20.displayHeight = 32;
     // Fireball 21
-    this.fireball21 = this.physics.add.sprite(4600, 250, 'fb1').play('fb');
+    this.fireball21 = this.physics.add.sprite(4600, 550, 'fb1').play('fb');
     this.physics.add.collider(this.fireball21, groundLayer);
     this.physics.add.collider(this.fireball21, invisibleWall);
     this.fireball21.setBounce(1);
@@ -469,7 +469,7 @@ export default class GameScene extends Phaser.Scene {
     this.fireball21.displayWidth = 32;
     this.fireball21.displayHeight = 32;
     // Fireball 22
-    this.fireball22 = this.physics.add.sprite(4800, 250, 'fb1').play('fb');
+    this.fireball22 = this.physics.add.sprite(4800, 550, 'fb1').play('fb');
     this.physics.add.collider(this.fireball22, groundLayer);
     this.physics.add.collider(this.fireball22, invisibleWall);
     this.fireball22.setBounce(1);
@@ -478,7 +478,7 @@ export default class GameScene extends Phaser.Scene {
     this.fireball22.displayWidth = 32;
     this.fireball22.displayHeight = 32;
     // Fireball 23
-    this.fireball23 = this.physics.add.sprite(4700, 250, 'fb1').play('fb');
+    this.fireball23 = this.physics.add.sprite(4700, 550, 'fb1').play('fb');
     this.physics.add.collider(this.fireball23, groundLayer);
     this.physics.add.collider(this.fireball23, invisibleWall);
     this.fireball23.setBounce(1);
@@ -487,7 +487,7 @@ export default class GameScene extends Phaser.Scene {
     this.fireball23.displayWidth = 32;
     this.fireball23.displayHeight = 32;
     // Fireball 24
-    this.fireball24 = this.physics.add.sprite(4750, 250, 'fb1').play('fb');
+    this.fireball24 = this.physics.add.sprite(4750, 550, 'fb1').play('fb');
     this.physics.add.collider(this.fireball24, groundLayer);
     this.physics.add.collider(this.fireball24, invisibleWall);
     this.fireball24.setBounce(1);
@@ -496,7 +496,7 @@ export default class GameScene extends Phaser.Scene {
     this.fireball24.displayWidth = 32;
     this.fireball24.displayHeight = 32;
     // Fireball 25
-    this.fireball25 = this.physics.add.sprite(3000, 250, 'fb1').play('fb');
+    this.fireball25 = this.physics.add.sprite(3000, 550, 'fb1').play('fb');
     this.physics.add.collider(this.fireball25, groundLayer);
     this.physics.add.collider(this.fireball25, invisibleWall);
     this.fireball25.setBounce(1);
@@ -742,7 +742,7 @@ export default class GameScene extends Phaser.Scene {
     this.cameras.main.followOffset.set(0, 30);
     // this.cameras.main.startFollow(player, true, 2.0, 2.0);
     // this.cameras.main.setZoom(4);
-    this.cameras.main.setZoom(1.2);
+    this.cameras.main.setZoom(2);
   }
 
   update() {
