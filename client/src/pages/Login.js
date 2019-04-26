@@ -85,10 +85,19 @@ class Login extends Component {
                             {/* eslint-disable-next-line */}
                                 Not a member? <Link to="/signup"><a href="/signup" id="regLink" className="btn btn-link" style={{ 'marginLeft': '10px' }}></a> Register here</Link>
 <<<<<<< HEAD
+<<<<<<< HEAD
                             </p>
                         </form>
                     </Col>
 =======
+=======
+
+                            </p>
+                        </form>
+                    </Col>
+
+                </Row>
+>>>>>>> c17bdcea67c27f04c2dcf660eaa0a1144bec0abf
 
                             </p>
                         </form>
