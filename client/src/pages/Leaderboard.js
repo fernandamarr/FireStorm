@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
 
+
 class Leaderboard extends Component {
     constructor() {
         super();
@@ -11,6 +12,7 @@ class Leaderboard extends Component {
         }
     }
     componentDidMount() {
+
         axios.defaults.headers.common['Authorization'] = localStorage.getItem('jwtToken');
         axios.get("/api/player/leaderboard").then(
             res => {
@@ -18,7 +20,12 @@ class Leaderboard extends Component {
                     // console.log(this.state.leaderboard);
                     var HTMLCustom =
                         <div id="testing" style={{ "color": "white" }}>
+
+
                             <div style={{ "textAlign": "center", "padding": "10%", "backgroundImage": "url('https://gridironhub.com/wp-content/uploads/2018/12/HIGH-SCORE.png')", "backgroundRepeat": "no-repeat", "backgroundPosition": "center" }}></div>
+                            <button class="push--flat">Play Again</button>
+                            <button id="blueArcade" class="push--flat">Dev Team</button>
+                            <button id="greenArcade" class="push--flat">Logout</button>
                             <table cellPadding="10" style={{ "margin": "0 auto" }}>
                                 <tr>
                                     <th>Name</th>
@@ -32,6 +39,7 @@ class Leaderboard extends Component {
                                 )}
                             </table>
                         </div>
+
                     ReactDOM.render(HTMLCustom, document.getElementById('leaderboard'));
                 });
             }
