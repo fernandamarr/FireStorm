@@ -41,8 +41,8 @@ export default class App extends Component {
   startGame() {
     // eslint-disable-next-line    
     let config = {
-      width: 1000,
-      height: 600,
+      width: 1264,
+      height: 711,
       type: Phaser.AUTO,
       pixelArt: true,
       physics: {
