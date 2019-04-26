@@ -26,7 +26,6 @@ export function Cards({
             </Row>
         </Container>
         </li>
-       
         <li className="list-group-item">
         <Container>
             <Row>
