@@ -18,7 +18,7 @@ export function Cards({
                 <Thumbnail src={thumbnail1}/>
                 </Col>
                 <Col size="xs-6 sm-9">
-            <h3>Hector Benitez</h3>
+            <h3 id="dev-title">Hector Benitez</h3>
             <p>info here</p>
             <a rel="noreferrer noopener" target="_blank" href="https://www.linkedin.com/in/hector-benitez/">LinkedIn | </a>
             <a rel="noreferrer noopener" target="_blank" href="https://github.com/h-Benitez13"> GitHub</a>
@@ -33,7 +33,7 @@ export function Cards({
                 <Thumbnail src={thumbnail2}/>
                 </Col>
                 <Col size="xs-6 sm-9">
-            <h3>Cesar Marroquin</h3>
+            <h3 id="dev-title">Cesar Marroquin</h3>
             <p>info here</p>
             <a rel="noreferrer noopener" target="_blank" href="https://www.linkedin.com/in/cesar-a-marroquin-gozalo-16964b52/">LinkedIn | </a>
             <a rel="noreferrer noopener" target="_blank" href="https://github.com/cesarmarroquin22"> GitHub</a>
@@ -48,7 +48,7 @@ export function Cards({
                     <Thumbnail src={thumbnail3}/>
                     </Col>
                     <Col size="xs-6 sm-9">
-                    <h3>Fernanda Marroquin</h3>
+                    <h3 id="dev-title">Fernanda Marroquin</h3>
                     <p>info here</p>
                     <a rel="noreferrer noopener" target="_blank" href="https://www.linkedin.com/in/fernandamarroquin/">LinkedIn | </a>
                     <a rel="noreferrer noopener" target="_blank" href="https://github.com/fernandamarr"> GitHub</a>
@@ -63,7 +63,7 @@ export function Cards({
                 <Thumbnail src={thumbnail4}/>
                 </Col>
                 <Col size="xs-6 sm-9">
-            <h3>Myk Duffy</h3>
+            <h3 id="dev-title">Myk Duffy</h3>
             <p>info here</p>
             <a rel="noreferrer noopener" target="_blank" href="https://www.linkedin.com/in/mykola-duffy-56577932/">LinkedIn | </a>
             <a rel="noreferrer noopener" target="_blank" href="https://github.com/mpduffy82"> GitHub</a>

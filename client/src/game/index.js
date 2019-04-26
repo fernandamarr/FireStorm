@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {Helmet} from "react-helmet";
 import Phaser from "phaser";
 import LoadScene from "./LoadScene";
 import MenuScene from "./MenuScene";
@@ -63,8 +64,11 @@ export default class App extends Component {
   render() {
     return (
       <div>
-          <div id="phaser-game"></div>
-      </div>
+          <Helmet>
+              <style>{'body { background-color: #000 }'}</style>
+          </Helmet>
+        <div id="phaser-game"></div>
+    </div>
     )
   }
 }
