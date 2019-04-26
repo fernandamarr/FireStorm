@@ -1,5 +1,6 @@
-body {
-  background-color: black;
+#loginContain{
+  background-image: url("/assets/login/control.jpg");
+  background-repeat: repeat;
 }
 
 
