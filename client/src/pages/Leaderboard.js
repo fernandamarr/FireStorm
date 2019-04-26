@@ -11,7 +11,8 @@ class Leaderboard extends Component {
         }
     }
     componentDidMount() {
-
+      
+        axios.defaults.headers.common['Authorization'] = localStorage.getItem('jwtToken');
         axios.get("/api/player/leaderboard").then(
             res => {
                 this.setState({ leaderboard: res.data }, () => {

@@ -53,7 +53,7 @@ export default class App extends Component {
           }
         }
       },
-      scene: [LoadScene, MenuScene, GameOver, WinScene, GameScene],
+      scene: [LoadScene, MenuScene, GameOver, GameScene, WinScene ],
       parent: document.querySelector("#phaser-game")
     };
 
