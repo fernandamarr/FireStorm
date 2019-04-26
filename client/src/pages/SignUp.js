@@ -43,7 +43,7 @@ class SignUp extends Component {
                     </Col>
                     <Col size="md-4 sm-12">
                         <Jumbotron>
-                            <h1 className="heading-primary text-white"> Sign-Up </h1>
+                            <h1 id="signText" className="heading-primary display-3 text-white"> Sign-Up </h1>
                         </Jumbotron>
                         <form className="form-signin" onSubmit={this.onSubmit}>
                             <Input
@@ -68,7 +68,7 @@ class SignUp extends Component {
                             />
                             
                            
-                            <button className="btn btn-lg btn-outline-light btn-block" type="submit">Register</button>
+                            <button id="regButtn" className="btn btn-lg btn-outline-light btn-block" type="submit" style={{'fontSize': '23px'}}>Register</button>
                        
                         </form>
                     </Col>
