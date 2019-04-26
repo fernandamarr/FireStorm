@@ -39,22 +39,23 @@ class Login extends Component {
                 }
             });
     }
-    
+
 
     render() {
         const { email, password, message } = this.state;
-        
+
         return (
             <Container fluid>
-                <Row >
+               
+                <Row>
                     <Col size="md-3 sm-12" >
                     </Col>
                     <Col size="md-6 sm-6 " >
-                    
+
                         <Jumbotron>
-                            <h1 id="loginText" className="m-5 display-1 text-white" > LOGIN  </h1>
+                            <h1 id="loginText" className=" display-1 text-white" > LOGIN  </h1>
                         </Jumbotron>
-                        <form className=" p-5 m-5 form-signin" onSubmit={this.onSubmit}>
+                        <form className="form-signin" onSubmit={this.onSubmit}>
                             {message !== '' &&
                                 <div className="alert alert-warning alert-dismissible" role="alert">
                                     {message}
@@ -80,13 +81,13 @@ class Login extends Component {
                             <button id="hereButtn" className="btn btn-lg btn-outline-primary btn-block" type="submit">Login</button>
                             <span className="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
                             <p id="otherText" className="text-white">
-                                Not a member? <Link to="/signup" id="regLink" className="btn btn-link" style={{'marginLeft': '10px'}}> Register here</Link>
+
+                            {/* eslint-disable-next-line */}
+                                Not a member? <Link to="/signup"><a href="/signup" id="regLink" className="btn btn-link" style={{ 'marginLeft': '10px' }}></a> Register here</Link>
                             </p>
                         </form>
                     </Col>
-                  
                 </Row>
-
             </Container>
         )
     }
