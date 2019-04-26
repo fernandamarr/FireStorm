@@ -13,7 +13,6 @@ function DevTeam() {
             <Navbar/>
             <Cards/>
             <Footer/>
-            
         </div>
     )
 }
