@@ -33,27 +33,29 @@ td {
   font-size: 30px;
 }
 
+
+/* Font changes */
 @font-face{
-  font-family: 'TestingF';
+  font-family: 'ArcadeFont';
   src: url("/assets/fonts/ARCADECLASSIC.TTF");
 }
 
 #loginText, #signText {
-  font-family: 'TestingF';
+  font-family: 'ArcadeFont';
   
 }
 
 #hereButtn, #regButtn {
-  font-family: 'TestingF';
+  font-family: 'ArcadeFont';
 }
 
 th, td{
-  font-family: 'TestingF';
+  font-family: 'ArcadeFont';
   font-size: 40px;
 }
 
 #otherText{
-  font-family: 'TestingF';
+  font-family: 'ArcadeFont';
   font-size: 25px;
 }
 
@@ -64,7 +66,11 @@ a:hover{
 }
 
 input{
-  font-family: 'TestingF';
+  font-family: 'ArcadeFont';
+}
+
+h3{
+  font-family: 'ArcadeFont';
 }
 
 /* ------- SCOREBOARD BUTTONS------- */
@@ -73,8 +79,8 @@ input{
 [class*="push"] {
   position: relative;
   display: inline-block;
-  width: 240px;
-  height: 240px;
+  width: 175px;
+  height: 175px;
   border: 0;
   margin: 1em;
   outline: none;
@@ -92,8 +98,8 @@ input{
   bottom: 12px;
   left: 24px;
   display: block;
-  width: 192px;
-  height: 192px;
+  width: 127px;
+  height: 127px;
   border: 16px solid rgba(0, 0, 0, 0.3);
   border-width: 0 0 16px;
   border-radius: 50%;
@@ -112,8 +118,8 @@ input{
 [class*="push"] {
   position: relative;
   display: inline-block;
-  width: 240px;
-  height: 240px;
+  width: 175px;
+  height: 175px;
   border: 0;
   margin: 1em;
   outline: none;
@@ -131,8 +137,8 @@ input{
   bottom: 12px;
   left: 24px;
   display: block;
-  width: 192px;
-  height: 192px;
+  width: 127px;
+  height: 127px;
   border: 16px solid rgba(0, 0, 0, 0.3);
   border-width: 0 0 16px;
   border-radius: 50%;
@@ -151,8 +157,8 @@ input{
 [class*="push"] {
   position: relative;
   display: inline-block;
-  width: 240px;
-  height: 240px;
+  width: 175px;
+  height: 175px;
   border: 0;
   margin: 1em;
   outline: none;
@@ -170,8 +176,8 @@ input{
   bottom: 12px;
   left: 24px;
   display: block;
-  width: 192px;
-  height: 192px;
+  width: 127px;
+  height: 127px;
   border: 16px solid rgba(0, 0, 0, 0.3);
   border-width: 0 0 16px;
   border-radius: 50%;
