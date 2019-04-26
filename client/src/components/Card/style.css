@@ -1,6 +1,6 @@
-body {
+/* #background {
     background-color: #c2bebe;
-}
+} */
 
 .list-group-item {
     margin-right: 200px;
@@ -8,5 +8,10 @@ body {
     margin-top: 30px;
     padding: 20px;
     border: 2px solid rgb(151, 1, 193);
+}
+
+#dev-title {
+    font-family: "Times New Roman", Times, serif;
+
 }
 

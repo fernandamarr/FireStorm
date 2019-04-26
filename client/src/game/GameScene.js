@@ -788,7 +788,7 @@ export default class GameScene extends Phaser.Scene {
     } else if (this.lives === 1) {
       player.setTint(0xff7f7f)
     } else {
-      // this.physics.pause();
+      this.physics.pause();
       player.setTint(0xff0000);
       this.cameras.main.shake(400);
       this.music.stop();

@@ -1,10 +1,9 @@
 // stalk leaderboard (courtest of Thomas the great)
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import {Helmet} from 'react-helmet';
 import axios from 'axios';
 import {Row,Col} from "../components/Grid";
-
-
 
 class Leaderboard extends Component {
     constructor() {
@@ -34,8 +33,7 @@ class Leaderboard extends Component {
                 this.setState({ leaderboard: res.data }, () => {
                     // console.log(this.state.leaderboard);
                     var HTMLCustom =
-
-                        <div id="testing" style={{ "color": "white", "backgroundColor": "black" }}> 
+                        <div id="testing" style={{ "color": "white"}}> 
                             <div style={{ "textAlign": "center", "padding": "10%", "backgroundImage": "url('https://gridironhub.com/wp-content/uploads/2018/12/HIGH-SCORE.png')", "backgroundRepeat": "no-repeat", "backgroundPosition": "center" }}></div>
                         <Row>
                             <Col size="md-4 sm-2">
@@ -75,9 +73,9 @@ class Leaderboard extends Component {
     render() {
         return (
             <div>
+            <Helmet><style>{'body { background-color: #000; }'}</style></Helmet>
                 <div id="leaderboard">
                 </div>
-
             </div>
         );
     }
