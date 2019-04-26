@@ -10,10 +10,10 @@
     left: 0;
     right: 0;
     padding: 10px;
-    font-weight: 600;
+    font-weight: 600; 
     color: #ffffff;
-    border-top: 5px solid rgb(151, 1, 193);
-    background: rgb(0, 0, 0);
+    border-top: 5px solid rgb(240, 44, 214);
+    background: #231F20;
 }
 
 #logo {
@@ -21,3 +21,4 @@
     margin-left: 10px;
     margin-bottom: 5px;
 }
+

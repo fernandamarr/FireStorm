@@ -8,7 +8,7 @@ function DevTeam() {
     return(
         <div>
             <Helmet>
-                <style>{'body { background-color: #c2bebe; }'}</style>
+                <style>{'body { background-color: #d6d6d6; }'}</style>
             </Helmet>
             <Navbar/>
             <Cards/>
