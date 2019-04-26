@@ -81,14 +81,13 @@ class Login extends Component {
                             <button id="hereButtn" className="btn btn-lg btn-outline-primary btn-block" type="submit">Login</button>
                             <span className="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
                             <p id="otherText" className="text-white">
+
                             {/* eslint-disable-next-line */}
                                 Not a member? <Link to="/signup"><a href="/signup" className="btn btn-link" style={{ 'marginLeft': '10px' }}></a> Register here</Link>
                             </p>
                         </form>
                     </Col>
-
                 </Row>
-
             </Container>
         )
     }

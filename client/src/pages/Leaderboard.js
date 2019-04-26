@@ -5,6 +5,7 @@ import axios from 'axios';
 import {Row,Col} from "../components/Grid";
 
 
+
 class Leaderboard extends Component {
     constructor() {
         super();
@@ -33,6 +34,7 @@ class Leaderboard extends Component {
                 this.setState({ leaderboard: res.data }, () => {
                     // console.log(this.state.leaderboard);
                     var HTMLCustom =
+
                         <div id="testing" style={{ "color": "white" }}> 
                             <div style={{ "textAlign": "center", "padding": "10%", "backgroundImage": "url('https://gridironhub.com/wp-content/uploads/2018/12/HIGH-SCORE.png')", "backgroundRepeat": "no-repeat", "backgroundPosition": "center" }}></div>
                         <Row>
@@ -45,6 +47,7 @@ class Leaderboard extends Component {
                                 </div>
                                 </Col>
                             <Col size="md-4">
+
                             <table cellPadding="10" style={{ "margin": "0 auto" }}>
                                 <tr>
                                     
