@@ -184,53 +184,53 @@ export default class GameScene extends Phaser.Scene {
     // this.sprite4.setCollideWorldBounds(true);
     // this.physics.add.collider(this.sprite4, groundLayer);
     // sprite 5
-    this.sprite5 = this.physics.add.sprite(5350,736, 'sprite5');
-    this.sprite5.displayWidth = 26;
-    this.sprite5.displayHeight = 40;
-    this.sprite5.setGravity(0, 200);
-    this.sprite5.setBounce(0.2);
-    this.sprite5.setCollideWorldBounds(true);
-    this.physics.add.collider(this.sprite5, groundLayer);
-    // sprite 6
-    this.sprite6 = this.physics.add.sprite(5380,736, 'sprite6');
-    this.sprite6.displayWidth = 26;
-    this.sprite6.displayHeight = 40;
-    this.sprite6.setGravity(0, 200);
-    this.sprite6.setBounce(0.2);
-    this.sprite6.setCollideWorldBounds(true);
-    this.physics.add.collider(this.sprite6, groundLayer);
-    // sprite 7
-    this.sprite7 = this.physics.add.sprite(5410,736, 'sprite7');
-    this.sprite7.displayWidth = 26;
-    this.sprite7.displayHeight = 40;
-    this.sprite7.setGravity(0, 200);
-    this.sprite7.setBounce(0.2);
-    this.sprite7.setCollideWorldBounds(true);
-    this.physics.add.collider(this.sprite7, groundLayer);
-    // sprite 8
-    this.sprite8 = this.physics.add.sprite(5440,736, 'sprite8');
-    this.sprite8.displayWidth = 26;
-    this.sprite8.displayHeight = 40;
-    this.sprite8.setGravity(0, 200);
-    this.sprite8.setBounce(0.2);
-    this.sprite8.setCollideWorldBounds(true);
-    this.physics.add.collider(this.sprite8, groundLayer);
-    // sprite 9
-    this.sprite9 = this.physics.add.sprite(5470,736, 'sprite9');
-    this.sprite9.displayWidth = 26;
-    this.sprite9.displayHeight = 40;
-    this.sprite9.setGravity(0, 200);
-    this.sprite9.setBounce(0.2);
-    this.sprite9.setCollideWorldBounds(true);
-    this.physics.add.collider(this.sprite9, groundLayer);
-    // sprite 10
-    this.sprite10 = this.physics.add.sprite(5500,736, 'sprite10');
-    this.sprite10.displayWidth = 26;
-    this.sprite10.displayHeight = 40;
-    this.sprite10.setGravity(0, 200);
-    this.sprite10.setBounce(0.2);
-    this.sprite10.setCollideWorldBounds(true);
-    this.physics.add.collider(this.sprite10, groundLayer);
+    // this.sprite5 = this.physics.add.sprite(5350,736, 'sprite5');
+    // this.sprite5.displayWidth = 26;
+    // this.sprite5.displayHeight = 40;
+    // this.sprite5.setGravity(0, 200);
+    // this.sprite5.setBounce(0.2);
+    // this.sprite5.setCollideWorldBounds(true);
+    // this.physics.add.collider(this.sprite5, groundLayer);
+    // // sprite 6
+    // this.sprite6 = this.physics.add.sprite(5380,736, 'sprite6');
+    // this.sprite6.displayWidth = 26;
+    // this.sprite6.displayHeight = 40;
+    // this.sprite6.setGravity(0, 200);
+    // this.sprite6.setBounce(0.2);
+    // this.sprite6.setCollideWorldBounds(true);
+    // this.physics.add.collider(this.sprite6, groundLayer);
+    // // sprite 7
+    // this.sprite7 = this.physics.add.sprite(5410,736, 'sprite7');
+    // this.sprite7.displayWidth = 26;
+    // this.sprite7.displayHeight = 40;
+    // this.sprite7.setGravity(0, 200);
+    // this.sprite7.setBounce(0.2);
+    // this.sprite7.setCollideWorldBounds(true);
+    // this.physics.add.collider(this.sprite7, groundLayer);
+    // // sprite 8
+    // this.sprite8 = this.physics.add.sprite(5440,736, 'sprite8');
+    // this.sprite8.displayWidth = 26;
+    // this.sprite8.displayHeight = 40;
+    // this.sprite8.setGravity(0, 200);
+    // this.sprite8.setBounce(0.2);
+    // this.sprite8.setCollideWorldBounds(true);
+    // this.physics.add.collider(this.sprite8, groundLayer);
+    // // sprite 9
+    // this.sprite9 = this.physics.add.sprite(5470,736, 'sprite9');
+    // this.sprite9.displayWidth = 26;
+    // this.sprite9.displayHeight = 40;
+    // this.sprite9.setGravity(0, 200);
+    // this.sprite9.setBounce(0.2);
+    // this.sprite9.setCollideWorldBounds(true);
+    // this.physics.add.collider(this.sprite9, groundLayer);
+    // // sprite 10
+    // this.sprite10 = this.physics.add.sprite(5500,736, 'sprite10');
+    // this.sprite10.displayWidth = 26;
+    // this.sprite10.displayHeight = 40;
+    // this.sprite10.setGravity(0, 200);
+    // this.sprite10.setBounce(0.2);
+    // this.sprite10.setCollideWorldBounds(true);
+    // this.physics.add.collider(this.sprite10, groundLayer);
     // sprite Dev Team
     this.devteam = this.physics.add.sprite(5269,736, 'devteam');
     this.devteam.displayWidth = 100;
