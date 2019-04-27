@@ -60,6 +60,7 @@ class SignUp extends Component {
                                 required
                             />
                             <Input
+                                type="password"
                                 value={password}
                                 onChange={this.onChange}
                                 name="password"
