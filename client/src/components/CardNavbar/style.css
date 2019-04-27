@@ -14,3 +14,20 @@
 #dev-nav:hover {
     color: #f02cd6;
 }
+
+#dev-nav::after {
+    content: '';
+    display: block;
+    border: none;
+    width: 0;
+    height: 3px;
+    margin-top: 5px;
+    background: #f02cd6;
+    transition: width .3s;
+}
+
+#dev-nav:hover::after {
+    width: 100%;
+    border: none;
+    transition: width .3s;
+}
