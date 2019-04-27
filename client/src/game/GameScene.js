@@ -119,7 +119,7 @@ export default class GameScene extends Phaser.Scene {
     });
 
     // Adds player and sets her to collide with ground tiles
-    this.player = this.physics.add.sprite(100, 736, 'sprite');
+    this.player = this.physics.add.sprite(30, 736, 'sprite');
     // eslint-disable-next-line
     let IFP1 = map.createStaticLayer("IFP1", [props], 0, 0);
     // eslint-disable-next-line
@@ -152,85 +152,93 @@ export default class GameScene extends Phaser.Scene {
     this.physics.add.collider(this.heart, groundLayer);
 
     // Sprite community
-    this.sprite1 = this.physics.add.sprite(5230,736, 'sprite1');
-    this.sprite1.displayWidth = 26;
-    this.sprite1.displayHeight = 40;
-    this.sprite1.setGravity(0, 200);
-    this.sprite1.setBounce(0.2);
-    this.sprite1.setCollideWorldBounds(true);
-    this.physics.add.collider(this.sprite1, groundLayer);
+    // this.sprite1 = this.physics.add.sprite(5230,736, 'sprite1');
+    // this.sprite1.displayWidth = 26;
+    // this.sprite1.displayHeight = 40;
+    // this.sprite1.setGravity(0, 200);
+    // this.sprite1.setBounce(0.2);
+    // this.sprite1.setCollideWorldBounds(true);
+    // this.physics.add.collider(this.sprite1, groundLayer);
     // sprite 2
-    this.sprite2 = this.physics.add.sprite(5260,736, 'sprite2');
-    this.sprite2.displayWidth = 26;
-    this.sprite2.displayHeight = 40;
-    this.sprite2.setGravity(0, 200);
-    this.sprite2.setBounce(0.2);
-    this.sprite2.setCollideWorldBounds(true);
-    this.physics.add.collider(this.sprite2, groundLayer);
+    // this.sprite2 = this.physics.add.sprite(5260,736, 'sprite2');
+    // this.sprite2.displayWidth = 26;
+    // this.sprite2.displayHeight = 40;
+    // this.sprite2.setGravity(0, 200);
+    // this.sprite2.setBounce(0.2);
+    // this.sprite2.setCollideWorldBounds(true);
+    // this.physics.add.collider(this.sprite2, groundLayer);
     // sprite 3
-    this.sprite3 = this.physics.add.sprite(5290,736, 'sprite3');
-    this.sprite3.displayWidth = 26;
-    this.sprite3.displayHeight = 40;
-    this.sprite3.setGravity(0, 200);
-    this.sprite3.setBounce(0.2);
-    this.sprite3.setCollideWorldBounds(true);
-    this.physics.add.collider(this.sprite3, groundLayer);
+    // this.sprite3 = this.physics.add.sprite(5290,736, 'sprite3');
+    // this.sprite3.displayWidth = 26;
+    // this.sprite3.displayHeight = 40;
+    // this.sprite3.setGravity(0, 200);
+    // this.sprite3.setBounce(0.2);
+    // this.sprite3.setCollideWorldBounds(true);
+    // this.physics.add.collider(this.sprite3, groundLayer);
     // sprite 4
-    this.sprite4 = this.physics.add.sprite(5320,736, 'sprite4');
-    this.sprite4.displayWidth = 26;
-    this.sprite4.displayHeight = 40;
-    this.sprite4.setGravity(0, 200);
-    this.sprite4.setBounce(0.2);
-    this.sprite4.setCollideWorldBounds(true);
-    this.physics.add.collider(this.sprite4, groundLayer);
+    // this.sprite4 = this.physics.add.sprite(5320,736, 'sprite4');
+    // this.sprite4.displayWidth = 26;
+    // this.sprite4.displayHeight = 40;
+    // this.sprite4.setGravity(0, 200);
+    // this.sprite4.setBounce(0.2);
+    // this.sprite4.setCollideWorldBounds(true);
+    // this.physics.add.collider(this.sprite4, groundLayer);
     // sprite 5
-    this.sprite5 = this.physics.add.sprite(5350,736, 'sprite5');
-    this.sprite5.displayWidth = 26;
-    this.sprite5.displayHeight = 40;
-    this.sprite5.setGravity(0, 200);
-    this.sprite5.setBounce(0.2);
-    this.sprite5.setCollideWorldBounds(true);
-    this.physics.add.collider(this.sprite5, groundLayer);
-    // sprite 6
-    this.sprite6 = this.physics.add.sprite(5380,736, 'sprite6');
-    this.sprite6.displayWidth = 26;
-    this.sprite6.displayHeight = 40;
-    this.sprite6.setGravity(0, 200);
-    this.sprite6.setBounce(0.2);
-    this.sprite6.setCollideWorldBounds(true);
-    this.physics.add.collider(this.sprite6, groundLayer);
-    // sprite 7
-    this.sprite7 = this.physics.add.sprite(5410,736, 'sprite7');
-    this.sprite7.displayWidth = 26;
-    this.sprite7.displayHeight = 40;
-    this.sprite7.setGravity(0, 200);
-    this.sprite7.setBounce(0.2);
-    this.sprite7.setCollideWorldBounds(true);
-    this.physics.add.collider(this.sprite7, groundLayer);
-    // sprite 8
-    this.sprite8 = this.physics.add.sprite(5440,736, 'sprite8');
-    this.sprite8.displayWidth = 26;
-    this.sprite8.displayHeight = 40;
-    this.sprite8.setGravity(0, 200);
-    this.sprite8.setBounce(0.2);
-    this.sprite8.setCollideWorldBounds(true);
-    this.physics.add.collider(this.sprite8, groundLayer);
-    // sprite 9
-    this.sprite9 = this.physics.add.sprite(5470,736, 'sprite9');
-    this.sprite9.displayWidth = 26;
-    this.sprite9.displayHeight = 40;
-    this.sprite9.setGravity(0, 200);
-    this.sprite9.setBounce(0.2);
-    this.sprite9.setCollideWorldBounds(true);
-    this.physics.add.collider(this.sprite9, groundLayer);
-    // sprite 10
-    this.sprite10 = this.physics.add.sprite(5500,736, 'sprite10');
-    this.sprite10.displayWidth = 26;
-    this.sprite10.displayHeight = 40;
-    this.sprite10.setGravity(0, 200);
-    this.sprite10.setBounce(0.2);
-    this.sprite10.setCollideWorldBounds(true);
-    this.physics.add.collider(this.sprite10, groundLayer);
+    // this.sprite5 = this.physics.add.sprite(5350,736, 'sprite5');
+    // this.sprite5.displayWidth = 26;
+    // this.sprite5.displayHeight = 40;
+    // this.sprite5.setGravity(0, 200);
+    // this.sprite5.setBounce(0.2);
+    // this.sprite5.setCollideWorldBounds(true);
+    // this.physics.add.collider(this.sprite5, groundLayer);
+    // // sprite 6
+    // this.sprite6 = this.physics.add.sprite(5380,736, 'sprite6');
+    // this.sprite6.displayWidth = 26;
+    // this.sprite6.displayHeight = 40;
+    // this.sprite6.setGravity(0, 200);
+    // this.sprite6.setBounce(0.2);
+    // this.sprite6.setCollideWorldBounds(true);
+    // this.physics.add.collider(this.sprite6, groundLayer);
+    // // sprite 7
+    // this.sprite7 = this.physics.add.sprite(5410,736, 'sprite7');
+    // this.sprite7.displayWidth = 26;
+    // this.sprite7.displayHeight = 40;
+    // this.sprite7.setGravity(0, 200);
+    // this.sprite7.setBounce(0.2);
+    // this.sprite7.setCollideWorldBounds(true);
+    // this.physics.add.collider(this.sprite7, groundLayer);
+    // // sprite 8
+    // this.sprite8 = this.physics.add.sprite(5440,736, 'sprite8');
+    // this.sprite8.displayWidth = 26;
+    // this.sprite8.displayHeight = 40;
+    // this.sprite8.setGravity(0, 200);
+    // this.sprite8.setBounce(0.2);
+    // this.sprite8.setCollideWorldBounds(true);
+    // this.physics.add.collider(this.sprite8, groundLayer);
+    // // sprite 9
+    // this.sprite9 = this.physics.add.sprite(5470,736, 'sprite9');
+    // this.sprite9.displayWidth = 26;
+    // this.sprite9.displayHeight = 40;
+    // this.sprite9.setGravity(0, 200);
+    // this.sprite9.setBounce(0.2);
+    // this.sprite9.setCollideWorldBounds(true);
+    // this.physics.add.collider(this.sprite9, groundLayer);
+    // // sprite 10
+    // this.sprite10 = this.physics.add.sprite(5500,736, 'sprite10');
+    // this.sprite10.displayWidth = 26;
+    // this.sprite10.displayHeight = 40;
+    // this.sprite10.setGravity(0, 200);
+    // this.sprite10.setBounce(0.2);
+    // this.sprite10.setCollideWorldBounds(true);
+    // this.physics.add.collider(this.sprite10, groundLayer);
+    // sprite Dev Team
+    this.devteam = this.physics.add.sprite(5269,736, 'devteam');
+    this.devteam.displayWidth = 100;
+    this.devteam.displayHeight = 69;
+    this.devteam.setGravity(0, 200);
+    this.devteam.setBounce(0.2);
+    this.devteam.setCollideWorldBounds(true);
+    this.physics.add.collider(this.devteam, groundLayer);
 
 
     // Fireball frames
@@ -723,7 +731,7 @@ export default class GameScene extends Phaser.Scene {
     //lives
     // (600, 350) for bigger screen
     this.lives = 3;
-    this.livesText = this.add.text(200, 150, `Lives: ${this.lives}`, {
+    this.livesText = this.add.text(420, 255, `Lives: ${this.lives}`, {
       font: '25px monospace',
       fill: '#000'
     });
@@ -731,7 +739,7 @@ export default class GameScene extends Phaser.Scene {
 
     //score
     this.coinScore = 0
-    this.scoreText = this.add.text(200, 200, `Score: ${this.coinScore}`, {
+    this.scoreText = this.add.text(420, 235, `Score: ${this.coinScore}`, {
       font: '25px monospace',
       fill: '#000'
     });
@@ -742,7 +750,7 @@ export default class GameScene extends Phaser.Scene {
     this.cameras.main.followOffset.set(0, 30);
     // this.cameras.main.startFollow(player, true, 2.0, 2.0);
     // this.cameras.main.setZoom(4);
-    this.cameras.main.setZoom(1.2);
+    this.cameras.main.setZoom(1.75);
   }
 
   update() {
