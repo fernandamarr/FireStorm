@@ -1,7 +1,7 @@
 import React from "react";
 
 let aesthBack = {
-    height: '800px'
+    height: '1200px'
 }
 // Exporting the Container, Row, and Col components from this file
 export const Container = ({children}) => {

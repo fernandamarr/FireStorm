@@ -2,7 +2,7 @@ import React from "react";
 
 const aesthetic= {
     backgroundImage: 'linear-gradient(to top left, rgb(66, 223, 244), rgb(9, 36, 237), rgb(129, 1, 193), rgb(151, 1, 193), rgb(193, 1, 186))',
-    height: "800px"
+    height: "1200px"
 }
 const warriorImg = {
     backgroundImage: 'url(https://art.ngfiles.com/images/695000/695547_michafrario_super-pocket-fighter-nova.gif?f1543967599)',
