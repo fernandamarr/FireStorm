@@ -1,6 +1,5 @@
 import React from "react";
 import {Helmet} from 'react-helmet';
-// import { Cards } from "../components/Card";
 import Footer from "../components/CardFooter";
 import Navbar from "../components/CardNavbar";
 import { Container, Row, Col } from "../components/CardGrid";
@@ -70,7 +69,7 @@ function DevTeam() {
                                 <ul>
                                     <li><a rel="noreferrer noopener" target="_blank" href="https://github.com/mpduffy82"><i className="fab fa-github"></i></a></li>
                                     <li><a rel="noreferrer noopener" target="_blank" href="https://www.linkedin.com/in/mykola-duffy-56577932/"><i className="fab fa-linkedin-in"></i></a></li>
-                                    <li><a rel="noreferrer noopener" target="_blank" href="https://github.com/mpduffy82"><i className="fas fa-user-circle"></i></a></li>
+                                    <li><a rel="noreferrer noopener" target="_blank" href="https://mpduffy82.github.io/Bootstrap-Portfolio/"><i className="fas fa-user-circle"></i></a></li>
                                 </ul>
                             </div>
                         </div>

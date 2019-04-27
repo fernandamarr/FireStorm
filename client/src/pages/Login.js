@@ -35,7 +35,7 @@ class Login extends Component {
                 this.props.history.push('/game');
             }).catch((error) => {
                 if (error.response.status === 401) {
-                    this.setState({ message: 'Login failed. email or password do not match' });
+                    this.setState({ message: 'Login failed. Email or password do not match' });
                 }
             });
     }
