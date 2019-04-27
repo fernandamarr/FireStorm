@@ -34,7 +34,7 @@ function DevTeam() {
                     <div className="list-group-item">
                         <div className="image-area">
                             <div className="img-wrapper">
-                                <img src="/assets/images/cesar.jpg" alt="Cesar Marroquin"/>
+                                <img src="/assets/images/cesar.jpeg" alt="Cesar Marroquin"/>
                                 <h2>Cesar Marroquin<br></br><span className="dev-info">full-stack web developer</span></h2>
                                 <ul>
                                 <li>
