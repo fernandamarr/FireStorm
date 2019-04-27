@@ -33,7 +33,7 @@ class Leaderboard extends Component {
                 this.setState({ leaderboard: res.data }, () => {
                     // console.log(this.state.leaderboard);
                     var HTMLCustom =
-                        <div id="testing" style={{ "color": "white"}}> 
+                        <div id="testing" className="container" style={{ "color": "white"}}> 
                             <div style={{ "textAlign": "center", "padding": "10%", "backgroundImage": "url('https://gridironhub.com/wp-content/uploads/2018/12/HIGH-SCORE.png')", "backgroundRepeat": "no-repeat", "backgroundPosition": "center" }}></div>
                         <Row>
                             <Col size="md-4 sm-2">
