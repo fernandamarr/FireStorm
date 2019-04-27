@@ -37,7 +37,7 @@ class SignUp extends Component {
     render() {
         const { name, email, password } = this.state;
         return (
-            <Container fluid>
+            <Container fluid >
                 <Row>
                     <Col size="md-4 sm-12">
                     </Col>

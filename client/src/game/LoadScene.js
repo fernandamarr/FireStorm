@@ -47,6 +47,7 @@ export default class LoadScene extends Phaser.Scene {
         this.load.image("sprite8", "assets/images/sprite8.png");
         this.load.image("sprite9", "assets/images/sprite9.png");
         this.load.image("sprite10", "assets/images/sprite10.png");
+        this.load.image("devteam", "assets/images/devteam.png");
         this.load.spritesheet("sprite", "assets/images/spritesheet2.png", {frameWidth: 32, frameHeight: 60});
         this.load.tilemapTiledJSON("map", "assets/trackrmap2.json");
         this.load.audio("theme-song", "assets/audio/theme-song2.mp3");
