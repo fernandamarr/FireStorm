@@ -31,7 +31,7 @@ export function Row({ fluid, children }) {
 // e.g. <Col size="md-12"> instead of <div className="col-md-12">
 export function Col({size, children}) {
   return (
-    <div
+    <div id="dev-col"
       className = {size
         .split(" ")
         .map(size => "col-" + size)
