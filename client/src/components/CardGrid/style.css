@@ -6,6 +6,10 @@ div.thumbnail {
   padding-top: 100%;
 }
 
+#dev-col {
+  margin-bottom: 50%;
+}
+
 .dev-title {
   font-family: 'ArcadeFont';
   font-size: 80px;
@@ -13,12 +17,13 @@ div.thumbnail {
 
 .list-group-item {
   margin: 100px;
+  margin-bottom: 400px;
   margin-right: 250px;
   margin-top: 250px;
 }
   
 .image-area {
-  top: 50%;
+  top: 150%;
   left: 0%;
   transform: translate(-50%, -50%);
   position: absolute;
