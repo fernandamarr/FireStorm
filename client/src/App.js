@@ -12,7 +12,6 @@ function App() {
     <Router>
       <div>
         <Switch>
-          {/* <Route exact path="/home" component={} /> */}
           <Route exact path="/" component={Login} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/game" component={Game} />

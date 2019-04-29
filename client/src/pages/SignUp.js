@@ -1,11 +1,8 @@
 import React, { Component } from "react";
-
 import axios from 'axios';
 import { Col, Row, Container } from "../components/SignUpGrid";
 import Jumbotron from "../components/Jumbotron";
-
 import { Input } from "../components/Input";
-
 
 class SignUp extends Component {
 
@@ -67,10 +64,8 @@ class SignUp extends Component {
                                 placeholder="Password (required)"
                                 required
                             />
-                            
-                           
+
                             <button id="regButtn" className="btn btn-lg btn-outline-light btn-block" type="submit" style={{'fontSize': '23px'}}>Register</button>
-                       
                         </form>
                     </Col>
                 </Row>

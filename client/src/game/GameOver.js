@@ -80,8 +80,6 @@ export default class GameOver extends Phaser.Scene {
         })
         leaderBtn.on("pointerup", () => {
             this.endTheme.stop();
-            // localStorage.removeItem('jwtToken');
-            // localStorage.removeItem('myemail');
             window.location.replace("/leaderboard");
         })
     }

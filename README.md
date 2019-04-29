@@ -1,6 +1,6 @@
 # FireStorm 🔥
 
-A platformer video game where you guide Mia, the sole survivor of FireStorm, to the safety of a neighboring village.
+A platformer game where you guide Mia, the sole survivor of FireStorm, to the safety of a neighboring village.
 
 ## Demo
 
@@ -11,6 +11,8 @@ FireStorm is hosted on Heroku. Check it out by [clicking here](https://firestorm
 ![register-gif](client/public/assets/images/register-gif.gif)
 
 ### Play 🎮🧡
+
+Hint: Bounce on the coins to get to a secret location!
 
 ![game-gif](client/public/assets/images/game-gif.gif)
 

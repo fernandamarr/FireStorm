@@ -49,7 +49,7 @@ function DevTeam() {
                     <div className="list-group-item">
                         <div className="image-area">
                             <div className="img-wrapper">
-                                <img src="/assets/images/fernanda.jpeg" alt="Fernanda Marroquin"/>
+                                <img src="/assets/images/fernanda.png" alt="Fernanda Marroquin"/>
                                 <h2>Fernanda Marroquin<br></br><span className="dev-info">full-stack web developer</span></h2>
                                 <ul>
                                     <li><a rel="noreferrer noopener" target="_blank" href="https://github.com/fernandamarr"><i className="fab fa-github"></i></a></li>
@@ -64,7 +64,7 @@ function DevTeam() {
                     <div className="list-group-item">
                         <div className="image-area">
                             <div className="img-wrapper">
-                                <img src="/assets/images/myk.png" alt="Myk Duffy"/>
+                                <img src="/assets/images/myk.jpg" alt="Myk Duffy"/>
                                 <h2>Myk Duffy<br></br><span className="dev-info">full-stack web developer</span></h2>
                                 <ul>
                                     <li><a rel="noreferrer noopener" target="_blank" href="https://github.com/mpduffy82"><i className="fab fa-github"></i></a></li>
