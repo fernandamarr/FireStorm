@@ -20,6 +20,7 @@ export default class MenuScene extends Phaser.Scene {
     let scale = Math.max(scaleX, scaleY);
     image.setScale(scale).setScrollFactor(0);
     image.setTint(0xffcccc);
+    
     // Play button      
     let playBtn = this.add.image(this.game.renderer.width / 2, this.game.renderer.height / 2, "playbtn");
     this.add.image(this.game.renderer.width / 2, this.game.renderer.height * 0.20, "title");
