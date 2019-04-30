@@ -79,7 +79,7 @@ export default class MenuScene extends Phaser.Scene {
       });
      
     });
-    playBtn.on("pointerup", (pointer, targets) => {
+    playBtn.once("pointerup", (pointer, targets) => {
       this.startTheme.stop();
       this.game.scene.start("GameScene", GameScene, true, {
         x: 400,
