@@ -97,15 +97,18 @@ export default class GameOver extends Phaser.Scene {
         restartBtn.on("pointerout", () => {
             hoverSprite.setVisible(false);
         });
+
         
         restartBtn.on("pointerup", () => {
             this.endTheme.stop();
             let startScene = this.scene.get("GameScene");
             startScene.scene.start();
+
             });
             leaderBtn.on("pointerup", () => {
                 this.endTheme.stop();
                 window.location.replace("/leaderboard");
+
             });
             this.input.keyboard.once('keyup-S', () => {
                 
@@ -117,4 +120,5 @@ export default class GameOver extends Phaser.Scene {
                 
                 this.endTheme.stop();
                 window.location.replace("/leaderboard");
+
             });}}
