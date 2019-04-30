@@ -39,9 +39,9 @@ class Leaderboard extends Component {
                             <Col size="md-4 sm-2">
                             <div className="btn-group-vertical">
                                     
-                                    <button className="push--flat" onClick={this.gameRoute}><h3 className="display-7 text-black">Play<br></br> Again<br></br>(press A)</h3></button>
-                                    <button id="blueArcade" className="push--flat " onClick={this.devTeamRoute}><h3 className="display-7 text-black">Dev Team<br></br>(press x)</h3></button>
-                                    <button id="greenArcade" className="push--flat" onClick={this.logout}><h3 className="display-7 text-black">Logout<br></br>(press y)</h3></button>
+                                    <button className="push--flat" onClick={this.gameRoute}><h3 className="display-7 text-black">Play<br></br> Again</h3></button>
+                                    <button id="blueArcade" className="push--flat " onClick={this.devTeamRoute}><h3 className="display-7 text-black">Dev Team</h3></button>
+                                    <button id="greenArcade" className="push--flat" onClick={this.logout}><h3 className="display-7 text-black">Logout</h3></button>
                                 </div>
                                 </Col>
                             <Col size="md-4">
