@@ -41,31 +41,7 @@ export default class GameOver extends Phaser.Scene {
                 fill: "#ffffff"
             }
         });
-        finalScoreText.setOrigin(0.5, 3.5);
-        let playAgainText = this.make.text({
-            x: width / 2,
-            y: height / 2 - 90,
-            text: `To PLAY AGAIN - Press "S" on Keyboard or "START" Gamepad`,
-            style: {
-                font: "30px monospace",
-                fill: "#E25822",
-                stroke: '#000',
-                strokeThickness: 10
-            }
-        });
-        playAgainText.setOrigin(0.5, 1.5);
-        let highScoreText = this.make.text({
-            x: width / 2,
-            y: height / 2 - 90,
-            text: `To view HIGH SCORES - Press "E" on Keyboard or "SELECT" on Gamepad`,
-            style: {
-                font: "30px monospace",
-                fill: "#E25822",
-                stroke: '#000',
-                strokeThickness: 10
-            }
-        });
-        highScoreText.setOrigin(0.5, 0.001);
+        finalScoreText.setOrigin(0.5, 0.5);
 
         let theFinalScore = parseInt(this.finalScore);
         let email = localStorage.getItem('myemail');
@@ -93,25 +69,18 @@ export default class GameOver extends Phaser.Scene {
             hoverSprite.setVisible(true);
             hoverSprite.x = restartBtn.x - restartBtn.width;
             hoverSprite.y = restartBtn.y;
-        });
+        })
         restartBtn.on("pointerout", () => {
             hoverSprite.setVisible(false);
-        });
-        this.input.keyboard.on('keydown_S', () => {
-            this.endTheme.stop();
-            let startScene = this.scene.get("GameScene");
-            startScene.scene.start();
-        });
-        this.input.keyboard.on('keydown_E', () => {
-            this.endTheme.stop();
-            window.location.replace("/leaderboard");
-        });
+        })
         restartBtn.on("pointerup", () => {
             this.endTheme.stop();
             let startScene = this.scene.get("GameScene");
             startScene.scene.start();
-            });
-            leaderBtn.on("pointerup", () => {
-                this.endTheme.stop();
-                window.location.replace("/leaderboard");
-            });}}
+        })
+        leaderBtn.on("pointerup", () => {
+            this.endTheme.stop();
+            window.location.replace("/leaderboard");
+        })
+    }
+}

@@ -39,20 +39,7 @@ export default class MenuScene extends Phaser.Scene {
              strokeThickness: 10
          }
      });
-     descriptionText.setOrigin(0.5, 1.5);
-     let instructionText = this.make.text({
-      x: width / 2,
-      y: height / 2 - 90,
-      text: `Press "S" on Keyboard or "START" Gamepad to play`,
-      style: {
-          font: "30px monospace",
-          fill: "#E25822",
-          stroke: '#000',
-          strokeThickness: 10
-      }
-  });
-  instructionText.setOrigin(0.5, 0.001);
-     
+     descriptionText.setOrigin(0.5, 0.5);
 
     // Sprite
     let hoverSprite = this.add.sprite(100, 100, "small-sprite");
@@ -66,22 +53,16 @@ export default class MenuScene extends Phaser.Scene {
       hoverSprite.setVisible(true);
       hoverSprite.x = playBtn.x - playBtn.width;
       hoverSprite.y = playBtn.y;
-    });
+    })
     playBtn.on("pointerout", () => {
       hoverSprite.setVisible(false);
-    });
-    this.input.keyboard.on('keydown_S', (pointer, targets) => {
+    })
+    playBtn.on("pointerdown", (pointer, targets) => {
       this.startTheme.stop();
       this.game.scene.start("GameScene", GameScene, true, {
         x: 400,
         y: 300
       });
-     
-    });
-    playBtn.on("pointerup", (pointer, targets) => {
-      this.startTheme.stop();
-      this.game.scene.start("GameScene", GameScene, true, {
-        x: 400,
-        y: 300
-      });
-    });}}
+    })
+  }
+}
