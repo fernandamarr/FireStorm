@@ -41,14 +41,14 @@ export default class GameOver extends Phaser.Scene {
                 fill: "#ffffff"
             }
         });
-        finalScoreText.setOrigin(0.5, 3.5);
+        finalScoreText.setOrigin(0.5, 5.0);
         let playAgainText = this.make.text({
             x: width / 2,
             y: height / 2 - 90,
             text: `To PLAY AGAIN - Press "S" on Keyboard or "START" Gamepad`,
             style: {
                 font: "30px monospace",
-                fill: "#E25822",
+                fill: "#FFFFFF",
                 stroke: '#000',
                 strokeThickness: 10
             }
@@ -60,7 +60,7 @@ export default class GameOver extends Phaser.Scene {
             text: `To view HIGH SCORES - Press "E" on Keyboard or "SELECT" on Gamepad`,
             style: {
                 font: "30px monospace",
-                fill: "#E25822",
+                fill: "#FFFFFF",
                 stroke: '#000',
                 strokeThickness: 10
             }
