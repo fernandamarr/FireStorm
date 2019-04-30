@@ -67,5 +67,6 @@ export default class WinScene extends Phaser.Scene {
             // localStorage.removeItem('jwtToken');
             window.location.replace("/leaderboard");
         })
+        
     }
 }

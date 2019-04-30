@@ -296,7 +296,7 @@ export default class GameScene extends Phaser.Scene {
       repeat: -1
     });
     // Fireball 1
-    this.fireball = this.physics.add.sprite(500, 250, 'fb1').play('fb');
+    this.fireball = this.physics.add.sprite(930, 250, 'fb1').play('fb');
     this.physics.add.collider(this.fireball, groundLayer);
     this.physics.add.collider(this.fireball, invisibleWall);
     this.fireball.setBounce(1);
@@ -305,7 +305,7 @@ export default class GameScene extends Phaser.Scene {
     this.fireball.displayWidth = 32;
     this.fireball.displayHeight = 32;
     // Fireball 2
-    this.fireball2 = this.physics.add.sprite(800, 250, 'fb1').play('fb');
+    this.fireball2 = this.physics.add.sprite(950, 250, 'fb1').play('fb');
     this.physics.add.collider(this.fireball2, groundLayer);
     this.physics.add.collider(this.fireball2, invisibleWall);
     this.fireball2.setBounce(1);
@@ -759,7 +759,7 @@ export default class GameScene extends Phaser.Scene {
     this.cameras.main.followOffset.set(0, 30);
     // this.cameras.main.startFollow(player, true, 2.0, 2.0);
     // this.cameras.main.setZoom(4);
-    this.cameras.main.setZoom(1.75);
+    this.cameras.main.setZoom(1.8);
   }
 
   update() {
