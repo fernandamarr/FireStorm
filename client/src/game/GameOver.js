@@ -97,21 +97,24 @@ export default class GameOver extends Phaser.Scene {
         restartBtn.on("pointerout", () => {
             hoverSprite.setVisible(false);
         });
-        this.input.keyboard.on('keydown_S', () => {
-            this.endTheme.stop();
-            let startScene = this.scene.get("GameScene");
-            startScene.scene.start();
-        });
-        this.input.keyboard.on('keydown_E', () => {
-            this.endTheme.stop();
-            window.location.replace("/leaderboard");
-        });
+        
         restartBtn.on("pointerup", () => {
             this.endTheme.stop();
             let startScene = this.scene.get("GameScene");
             startScene.scene.start();
             });
             leaderBtn.on("pointerup", () => {
+                this.endTheme.stop();
+                window.location.replace("/leaderboard");
+            });
+            this.input.keyboard.once('keyup-S', () => {
+                
+                this.endTheme.stop();
+                let startScene = this.scene.get("GameScene");
+                startScene.scene.start();
+            });
+            this.input.keyboard.once('keyup-E', () => {
+                
                 this.endTheme.stop();
                 window.location.replace("/leaderboard");
             });}}

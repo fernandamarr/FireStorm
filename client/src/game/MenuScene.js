@@ -70,7 +70,8 @@ export default class MenuScene extends Phaser.Scene {
     playBtn.on("pointerout", () => {
       hoverSprite.setVisible(false);
     });
-    this.input.keyboard.on('keydown_S', (pointer, targets) => {
+    this.input.keyboard.once('keyup-S', () => {
+     
       this.startTheme.stop();
       this.game.scene.start("GameScene", GameScene, true, {
         x: 400,

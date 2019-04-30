@@ -5,7 +5,7 @@ export default class GameScene extends Phaser.Scene {
     super({
       key: "GameScene"
     });
-  };
+  }
 
   // Set variables for use in create() function
   // eslint-disable-next-line
@@ -52,8 +52,11 @@ export default class GameScene extends Phaser.Scene {
 
   create() {
     // Theme song and loop.
+    
     this.music = this.sound.add("theme-song");
+    this.music.stop();
     this.music.setLoop(true);
+    
     this.music.play();
 
     // Camera and world bounds
