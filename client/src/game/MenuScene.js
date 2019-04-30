@@ -39,14 +39,14 @@ export default class MenuScene extends Phaser.Scene {
              strokeThickness: 10
          }
      });
-     descriptionText.setOrigin(0.5, 1.5);
+     descriptionText.setOrigin(0.5, 2.5);
      let instructionText = this.make.text({
       x: width / 2,
       y: height / 2 - 90,
       text: `Press "S" on Keyboard or "START" Gamepad to play`,
       style: {
           font: "30px monospace",
-          fill: "#E25822",
+          fill: "#FFFFFF",
           stroke: '#000',
           strokeThickness: 10
       }
